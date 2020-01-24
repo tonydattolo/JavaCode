@@ -21,18 +21,21 @@ public class Lab2Exercises {
     
     // computes area of a square when given its side length
     public static int areaOfSquare(double sideLength) {
-      //TODO
+      int area = sideLength*sideLength;
+      return area;
       
     }
 
     // computes perimeter of a square when given its side length
     public static int perimeterOfSquare(double sideLength) {
-      //TODO
+      int perimeter = sideLength*4;
+      return perimeter;
     }
 
     // computes volume of a cubic when given its side length
     public static double volumeOfCube(double sideLength) {
-      //TODO
+      int volume = areaOfSquare(sideLength) * 3;
+      return volume;
     }
        
     // returns a String with three lines in the following format:
@@ -40,15 +43,22 @@ public class Lab2Exercises {
     // On Line2: "Area: *, Perimeter: **, Volume: **** " where * refers to area, ** refers to 
     // perimeter of square and *** refers to volume of the cube respectively. 
     public static String printMeasurements(int value) {
-      //TODO 
-      // Please reuse any of the functions defined above.
-    
+      String sideMeasure = Integer.toString(value);
+      String areaMeasure = Integer.toString(areaOfSquare(value));
+      String perimeterMeasure = Integer.toString(perimeterOfSquare(value));
+      String volumeMeasure = Double.toString(volumeOfCube(value));
+      String measurements = "Length of one Side of Square is: " + sideMeasure + "\nArea: , "
+                            + areaMeasure + "Perimeter: , " + perimeterMeasure
+                            + "Volume: " + volumeMeasure;
+      return measurements;
+      // return measurements;
     }
     
 	// given two points (x1,y1) and (x2,y2) return y intercept 	of the line
     public static int lineFunction(double x1, double y1, double x2, double y2) {
-      //TODO 
-   
+      double slope = (y2-y1) / (x2-x1);
+      double b = y1 / slope - x1;
+      return b;
     }
 
     // reads a number between 1000 and 1 Billion and prints it with commas (,) separating 
@@ -56,6 +66,8 @@ public class Lab2Exercises {
     // hint use modulus (%) to save part of the number, then concatenate back together as a String
     public static String addCommas(int num) {
       //TODO
+      
+      return "1";
     }
     
  
