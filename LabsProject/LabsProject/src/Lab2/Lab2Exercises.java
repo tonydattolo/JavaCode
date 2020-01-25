@@ -21,7 +21,7 @@ public class Lab2Exercises {
     
     // computes area of a square when given its side length
     public static int areaOfSquare(double sideLength) {
-      int area = sideLength*sideLength;
+      int area = Math.pow(sideLength, 2);
       return area;
       
     }
@@ -34,7 +34,8 @@ public class Lab2Exercises {
 
     // computes volume of a cubic when given its side length
     public static double volumeOfCube(double sideLength) {
-      int volume = areaOfSquare(sideLength) * 3;
+      int area = areaOfSquare(sideLength);
+      int volume = Math.pow(area, 3);
       return volume;
     }
        
