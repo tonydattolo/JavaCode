@@ -14,28 +14,31 @@
 // Note:  Do not need to explicitly import classes from java.lang but wanted to make it explicit 
 // Goal - understand using Static classes - i.e. the Math class was not designed to be Instantiated (make objects) 
 // It is a class that provides functionality and will be used to complete one of the methods
-// package Labs.Lab2;
+
+package LabsMaven.Lab2;
+
 import java.lang.Math;
+import java.util.Scanner;
 
 public class Lab2Exercises {
     
     // computes area of a square when given its side length
     public static int areaOfSquare(double sideLength) {
-      int area = Math.pow(sideLength, 2);
+      int area = (int) Math.pow(sideLength, 2);
       return area;
       
     }
 
     // computes perimeter of a square when given its side length
     public static int perimeterOfSquare(double sideLength) {
-      int perimeter = sideLength*4;
+      int perimeter = (int) (sideLength * 4);
       return perimeter;
     }
 
     // computes volume of a cubic when given its side length
     public static double volumeOfCube(double sideLength) {
       int area = areaOfSquare(sideLength);
-      int volume = Math.pow(area, 3);
+      int volume = (int) Math.pow(area, 3);
       return volume;
     }
        
@@ -59,16 +62,31 @@ public class Lab2Exercises {
     public static int lineFunction(double x1, double y1, double x2, double y2) {
       double slope = (y2-y1) / (x2-x1);
       double b = y1 / slope - x1;
-      return b;
+      return (int) b;
     }
 
     // reads a number between 1000 and 1 Billion and prints it with commas (,) separating 
     // every three digits. for example: 12317910 will be printed as $12,317,910
     // hint use modulus (%) to save part of the number, then concatenate back together as a String
     public static String addCommas(int num) {
-      //TODO
-      
-      return "1";
+      String moneyString = Integer.toString(num);
+      StringBuilder moneyStringCopy = new StringBuilder(moneyString);
+      StringBuilder commas = new StringBuilder("");
+      for (int i=moneyString.length(); i > 3; i-=3) {
+        if (moneyStringCopy.length() > 3) {
+          commas.insert(0, ","+moneyString.substring(i-3,i));
+        }
+        else {
+          commas.insert(0,moneyString.substring(0, i));
+        }
+        moneyStringCopy.delete(i-3, i);
+      }
+      if (moneyStringCopy.length() != 0){
+        commas.insert(0, moneyStringCopy);
+        moneyStringCopy.delete(0, moneyStringCopy.length());
+      }
+      String moneyWithCommas = "$"+commas; 
+      return moneyWithCommas;
     }
     
  
@@ -76,7 +94,21 @@ public class Lab2Exercises {
     public static void main(String[] args) {
       //TODO: Modify to test all functions
       // Use Scanner to read inputs from user. Don't use Scanner in above functions!
-        
+      Scanner test1Scanner = new Scanner(System.in);
+      System.out.println("Enter shape side length (as double): ");
+      Double test1 = test1Scanner.nextDouble();
+
+      Scanner test2Scanner = new Scanner(System.in);
+      System.out.println("Enter shape side length (as int): ");
+      int test2 = test1Scanner.nextInt();
+
+      Scanner test3Scanner = new Scanner(System.in);
+      System.out.println("Enter shape side length (as double): ");
+      Double test3 =
+
+
+
+      
     }
 }
 
