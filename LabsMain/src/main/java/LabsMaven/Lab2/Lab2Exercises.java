@@ -19,6 +19,7 @@ package LabsMaven.Lab2;
 
 import java.lang.Math;
 import java.util.Scanner;
+import java.util.function.DoubleToLongFunction;
 
 public class Lab2Exercises {
     
@@ -37,8 +38,7 @@ public class Lab2Exercises {
 
     // computes volume of a cubic when given its side length
     public static double volumeOfCube(double sideLength) {
-      int area = areaOfSquare(sideLength);
-      int volume = (int) Math.pow(area, 3);
+      int volume = (int) Math.pow(sideLength, 3);
       return volume;
     }
        
@@ -51,9 +51,9 @@ public class Lab2Exercises {
       String areaMeasure = Integer.toString(areaOfSquare(value));
       String perimeterMeasure = Integer.toString(perimeterOfSquare(value));
       String volumeMeasure = Double.toString(volumeOfCube(value));
-      String measurements = "Length of one Side of Square is: " + sideMeasure + "\nArea: , "
-                            + areaMeasure + "Perimeter: , " + perimeterMeasure
-                            + "Volume: " + volumeMeasure;
+      String measurements = "Length of one Side of Square is: " + sideMeasure + "\nArea: "
+                            + areaMeasure + ", Perimeter: " + perimeterMeasure
+                            + ", Volume: " + volumeMeasure;
       return measurements;
       // return measurements;
     }
@@ -94,17 +94,26 @@ public class Lab2Exercises {
     public static void main(String[] args) {
       //TODO: Modify to test all functions
       // Use Scanner to read inputs from user. Don't use Scanner in above functions!
-      Scanner test1Scanner = new Scanner(System.in);
-      System.out.println("Enter shape side length (as double): ");
-      Double test1 = test1Scanner.nextDouble();
-
-      Scanner test2Scanner = new Scanner(System.in);
+      Scanner test = new Scanner(System.in);
       System.out.println("Enter shape side length (as int): ");
-      int test2 = test1Scanner.nextInt();
+      int test1 = test.nextInt();
+      System.out.println(printMeasurements(test1));
 
-      Scanner test3Scanner = new Scanner(System.in);
-      System.out.println("Enter shape side length (as double): ");
-      Double test3 =
+      System.out.println("Enter x1 (as int): ");
+      double testx1 = test.nextDouble();
+      System.out.println("Enter y1 (as int): ");
+      double testy1 = test.nextDouble();
+      System.out.println("Enter x2 (as int): ");
+      double testx2 = test.nextDouble();
+      System.out.println("Enter y2 (as int): ");
+      double testy2 = test.nextDouble();
+      System.out.println(lineFunction(testx1, testy1, testx2, testy2));
+      
+
+
+      // Scanner test3Scanner = new Scanner(System.in);
+      // System.out.println("Enter shape side length (as double): ");
+      // Double test3 =
 
 
 

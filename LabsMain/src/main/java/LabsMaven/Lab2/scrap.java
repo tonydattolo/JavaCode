@@ -1,9 +1,12 @@
 package LabsMaven.Lab2;
-import java.lang.StringBuilder;
+
+// import java.lang.StringBuilder;
+
 /**
  * scrap
  */
-public class scrap {
+
+ public class scrap {
     public static void main(String[] args) {
         
     }
