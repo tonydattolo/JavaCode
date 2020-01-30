@@ -19,7 +19,9 @@ class CompoundExercises {
 
      // Test output main method
      public static void main(String[] args) {
-          // compoundOperators();
+          System.out.println("===Part 1===");
+          compoundOperators();
+          System.out.println("===Part 2===");
           question1();
      }
 

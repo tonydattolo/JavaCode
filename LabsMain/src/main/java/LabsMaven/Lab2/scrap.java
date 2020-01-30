@@ -8,9 +8,14 @@ package LabsMaven.Lab2;
 
  public class scrap {
     public static void main(String[] args) {
-        
+        System.out.println(lineFunction(-3.0, 0, 0, 4.0));
     }
-
+    public static int lineFunction(double x1, double y1, double x2, double y2) {
+        System.out.printf("x1: %f, y1: %f, x2: %f, y2: %f\n",x1,y1,x2,y2);
+        double slope = ((y2)-(y1)) / ((x2)-(x1));
+        double b = y1 - (slope*x1);
+        return (int) b;
+      }
 }
 
 
@@ -46,3 +51,28 @@ package LabsMaven.Lab2;
 // }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// int x = 2;
+// char a = 'A';
+// double y = 3.0;
+// // System.out.println(x*a);
+// // System.out.println(a*y);
+// // System.out.println(a*a);
+
+// // test0('A');
+// // test1(66);
+// int i = 10;
+// int n = ++i;
+// n++;
+// ++i;
+// System.out.println(i++ % 5);
+// System.out.println(i);
+// System.out.println(n);
+// }
+
+// public static void test0(int n) {
+// System.out.println(n);
+// }
+
+// public static void test1(char a) {
+// System.out.println(a);
