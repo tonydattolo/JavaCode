@@ -1,0 +1,44 @@
+Week 2 and 3
+
+TDD Test Driven Development
+    Regression Testing - whatever was working before, you haven't broken it
+        write first version
+        test with 4 possible inputs
+        write second version
+        test with 4 new inputs
+
+    JUnit
+        assert statements
+
+Classes
+    methods
+    objects
+    member variables
+
+Constructors - methods. same name as name of class. arguments change
+                example: Rectangle() has 7 different constructors
+
+Getters - get you values of internal member variables
+    .getValue(); // Note: getters null parameters
+
+Setters - set values in internal member variables
+    .setValue(int x, int y);
+    **getters get, setters set
+
+Rectangle(height,width,x,y)
+    https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Rectangle.html
+
+    Rectangle one = new Rectangle(1,1,2,2);
+    Rectangle two = new Rectangle(11,11,10,10);
+
+    .toString() //string representation of rectangle
+
+Object() ***all classes come from this. superclass
+
+System.out.println
+    **to access static variables, use ClassName.staticVar
+    out is a static PrintStream variable of the System class
+    Class.staticVar.method
+    System.out.format
+    printftester.java from book
+

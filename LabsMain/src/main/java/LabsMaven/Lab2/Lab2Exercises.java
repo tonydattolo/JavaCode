@@ -94,11 +94,16 @@ public class Lab2Exercises {
     public static void main(String[] args) {
       //TODO: Modify to test all functions
       // Use Scanner to read inputs from user. Don't use Scanner in above functions!
+      
+  
+      // Test printMeasurements() method    
       Scanner test = new Scanner(System.in);
       System.out.println("Enter shape side length (as int): ");
       int test1 = test.nextInt();
       System.out.println(printMeasurements(test1));
 
+      // Test lineFunction() method
+      // test case: x1 = 1, y1 = 2, x2 = 3, y2 = 4
       System.out.println("Enter x1 (as int): ");
       double testx1 = test.nextDouble();
       System.out.println("Enter y1 (as int): ");
@@ -107,17 +112,13 @@ public class Lab2Exercises {
       double testx2 = test.nextDouble();
       System.out.println("Enter y2 (as int): ");
       double testy2 = test.nextDouble();
-      System.out.println(lineFunction(testx1, testy1, testx2, testy2));
+      System.out.println(lineFunction(testx1, testy1, testx2, testy2)); 
       
+      // Test addCommas() method
+      System.out.println("Enter number (as int) to be converted to $x,x notation: ");
+      int testCommas = test.nextInt();
+      System.out.println(addCommas(testCommas));
 
-
-      // Scanner test3Scanner = new Scanner(System.in);
-      // System.out.println("Enter shape side length (as double): ");
-      // Double test3 =
-
-
-
-      
     }
 }
 
