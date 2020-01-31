@@ -42,3 +42,7 @@ System.out.println
     System.out.format
     printftester.java from book
 
+Graphics and Graphics2D
+    Graphics class stores the state of graphics, such as color
+    Graphics2D had methods to draw shape objects
+    Use cast to recover Graphics2D object from Graphics params
