@@ -4,14 +4,22 @@
 
 package LabsMaven.Lab3;
 
-/**
- * 
- */
+import java.io.SequenceInputStream;
+
 public class Lab3Exercises {
 
     public static void main(String[] args) {
-        my1089puzzle(371);
-        
+        // System.out.println(my1089puzzle(371));
+        // System.out.println(my1089puzzle(2));
+        // System.out.println(my1089puzzle(5236435));
+        // System.out.println(my1089puzzle(-2));
+        // System.out.println(my1089puzzle(-23523));
+
+
+        System.out.println(22/10);
+        System.out.println(22.0/7);
+        System.out.println(22/7.0);
+
     }
     /**
      * Discard all but last 3 digits
@@ -31,27 +39,52 @@ public class Lab3Exercises {
      * @return the sum
      */
     public static int my1089puzzle(int myInput) {
-        
-        String last3Digits = Integer.toString(myInput);
-        if (last3Digits.length() > 3){
-            last3Digits = last3Digits.substring(last3Digits.length()-4, last3Digits.length()-1);
+        System.out.println("===========");
+        int userInput;
+        if (myInput >= 0){
+            userInput = myInput;
+        } else {
+            userInput = myInput * -1;
         }
-        System.out.println(last3Digits);
-        System.out.println(last3Digits.length());
+        System.out.println(userInput);//1
 
+        String last3Digits = Integer.toString(userInput);
+        System.out.println("last3: " + last3Digits);
+        System.out.println("len of last 3: " + last3Digits.length());
+        for (int i = 0; i < last3Digits.length(); i++){
+            System.out.println("index: " + i);
+        }
+        if (last3Digits.length() > 3){
+            last3Digits = last3Digits.substring(last3Digits.length()-3, last3Digits.length());
+        } else {
+            while (last3Digits.length() < 3) {
+                last3Digits = "0" + last3Digits;
+            }
+        }
+        System.out.println("last3 "+ last3Digits);//2
         String reversedUserInput = "";
         for (int i = last3Digits.length()-1; i >= 0; i--) {
             reversedUserInput += last3Digits.charAt(i);
         }
-        System.out.println(reversedUserInput);
-        int difference;
-        int reversedDifference;
-        int sum;
-
-
-        
-        
-        return 1;
+        System.out.println("reversedUserInput" + reversedUserInput);//3
+        int difference = Integer.parseInt(last3Digits) - Integer.parseInt(reversedUserInput);
+        if (difference < 0) {
+            difference *= -1;
+        }
+        System.out.println("difference: "+difference);//4
+        String tmp = Integer.toString(difference);
+        String reversedDifference = "";
+        for (int i = tmp.length()-1; i >= 0; i--) {
+            reversedDifference += tmp.charAt(i);
+        }
+        if (reversedDifference.length() < 3) {
+            last3Digits = "0" + last3Digits;
+        }
+        System.out.println("reversedDifference"+reversedDifference);//5
+        int newReversedDifference = Integer.parseInt(reversedDifference);
+        int sum = difference + newReversedDifference;
+        System.out.println("Sum: "+sum);//6
+        return sum;
 
     }
 }

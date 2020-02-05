@@ -1,0 +1,210 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.App",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-rectangle0<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.ClassCode.rectangle0",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab1<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.Lab1.Lab1",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CompoundExercises<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.Lab2.CompoundExercises",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab2Character<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.Lab2.Lab2Character",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab2Exercises<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.Lab2.Lab2Exercises",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab2Integer<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.Lab2.Lab2Integer",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-scrap<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.Lab2.scrap",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab3Exercises<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.Lab3.Lab3Exercises",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RecRecCirc<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.main.java.LabsMaven.MiniHWs.RecRecCirc",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CarTester<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "LabsMain.src.test.java.LabsMaven.ClassCodeTest.CarTester",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BottomUpFibonacci<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "PrincetonJava.CodeSamples.BottomUpFibonacci",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Quadratic<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "PrincetonJava.CodeSamples.Quadratic",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StandardInput<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "PrincetonJava.CodeSamples.StandardInput",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TopDownFibonacci<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "PrincetonJava.CodeSamples.TopDownFibonacci",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorld<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "PrincetonJava.HelloWorld",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-UseArgument<JavaCode_beb702e7>",
+            "request": "launch",
+            "mainClass": "PrincetonJava.UseArgument",
+            "projectName": "JavaCode_beb702e7"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.App",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-rectangle0<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.ClassCode.rectangle0",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CarTester<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.ClassCodeTest.CarTester",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab1<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab1.Lab1",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CompoundExercises<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab2.CompoundExercises",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab2Character<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab2.Lab2Character",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab2Exercises<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab2.Lab2Exercises",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab2Integer<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab2.Lab2Integer",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-scrap<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab2.scrap",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Lab3Exercises<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab3.Lab3Exercises",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RecRecCirc<LabsMain>",
+            "request": "launch",
+            "mainClass": "LabsMaven.MiniHWs.RecRecCirc",
+            "projectName": "LabsMain"
+        }
+    ]
+}
