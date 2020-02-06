@@ -62,10 +62,22 @@ Characters and Strings
         Double.parseDouble()
 
 Integers
+    
+
+printf
+    printf("%d,%f,%s", var1,var2,var3);
+    printf("%2.2f",var1) //allows for control of decimals printed
+    OUT: 00.00
+    default float precision is 6 digits. 0.000000
+    printf("%7.2f",var1)
+    OUT:       6.00 //adds spaces if there aren't 7 digits to the left
 
 Methods - java programs are classes, its functions are Methods
     static Methods
         public static int fun(int index)
+        ***you have to use class name to access not object/instance of the class.
+            Math.sqrt(9);
     non-static Methods
         public int fun(int index)
-
+        ***can use object do operator because its not static
+            someRandomString.length();

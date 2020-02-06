@@ -15,6 +15,7 @@
 package LabsMaven.Lab3;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Lab3Exercises {
@@ -211,6 +212,33 @@ public class Lab3Exercises {
                 commaSepNumbers.add(Integer.toString(userInput));
             }
         }
+
+            //DOWHILE version
+            // do {
+            // System.out.println("Please enter a number between 5-19: ");
+            // int userInput = in.nextInt();
+            
+            // // Check for additional constraints
+            // if (!(userInput < 5 || userInput > 19) && 
+            //     !(commaSepNumbers.contains(Integer.toString(userInput)))) {
+            //     commaSepNumbers.add(Integer.toString(userInput));
+            // }
+
+            // } while (in.hasNextInt());
+            // !A and !B == !(A or B)
+            // if (!((userInput < 5 || userInput > 19) || 
+            //     (commaSepNumbers.contains(Integer.toString(userInput))))) {
+            //     commaSepNumbers.add(Integer.toString(userInput));
+            // }
+
+            // if (userInput < 5 || userInput > 19) {
+            //     continue;
+            // } else if (commaSepNumbers.contains(Integer.toString(userInput))) {
+            //     continue;
+            // } else {
+            //     commaSepNumbers.add(Integer.toString(userInput));
+            // }
+        
         // in.close();
 
         // Convert ArrayList to string and add commas
@@ -245,6 +273,21 @@ public class Lab3Exercises {
         } else if (letterGrade == 'F') {
             gradeReport = "Your grade is less than a 63.0";
         }
+
+        // switch (letterGrade) {
+        //     case 'A': gradeReport = "Your grade is between a 93.0 and 100";
+        //         break;
+        //     case 'B': gradeReport = "Your grade is between a 83.0 and 92.9";
+        //         break;
+        //     case 'C': gradeReport = "Your grade is between a 73.0 and 82.9";
+        //         break;
+        //     case 'D': gradeReport = "Your grade is between a 63.0 and 72.9";
+        //         break;
+        //     case 'F': gradeReport = "Your grade is less than a 63.0";
+        //         break;
+        //     default: gradeReport = "Invalid input: please enter a letter between A-F";
+        //         break;
+        // }
 
         return gradeReport;
     }
