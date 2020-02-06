@@ -14,8 +14,6 @@
 
 package LabsMaven.Lab3;
 
-import java.io.SequenceInputStream;
-import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,45 +21,61 @@ public class Lab3Exercises {
 
     public static void main(String[] args) {
         // TEST: my1089puzzle method
-        // System.out.println("TEST: my1089puzzle method");
-        // Scanner sc = new Scanner(System.in);
-        // int testPuzzle = sc.nextInt();
-        // System.out.println(my1089puzzle(testPuzzle));
-        // System.out.println("===================");
+        System.out.println("TEST: my1089puzzle method");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int testPuzzle = sc.nextInt();
+        System.out.println(my1089puzzle(testPuzzle));
+        System.out.println("===================");
 
         // TEST: formatPhoneNumber method
-        // System.out.println("TEST: formatPhoneNumber method");
-        // System.out.println(formatPhoneNumber("5556667777", true));
-        // System.out.println(formatPhoneNumber("5556667777", false));
-        // System.out.println("===================");
+        System.out.println("TEST: formatPhoneNumber method");
+        System.out.print("Enter a phone number in format 5556667777: ");
+        String telephoneNumber = sc.next();
+        System.out.println(formatPhoneNumber(telephoneNumber, true));
+        System.out.println(formatPhoneNumber(telephoneNumber, false));
+        System.out.println("===================");
 
         // TEST: numbersList method
-        // System.out.println("TEST: numbersList method");
-        // System.out.println(numbersList());
-        // System.out.println("===================");
+        System.out.println("TEST: numbersList method");
+        System.out.println(numbersList());
+        System.out.println("===================");
+
+        // TEST: grade method
+        System.out.println("TEST: grade method");
+        System.out.print("Please enter a letter grade between A-F: ");
+        // Scanner sc2 = new Scanner(System.in);
+        String gradeInput = sc.next();
+        char gradeLetter = gradeInput.charAt(0);
+        System.out.println(grade(gradeLetter));
 
         // TEST: intToHex method
-        // System.out.println("TEST: intToHex method");
+        System.out.println("TEST: intToHex method");
+        System.out.print("Enter a number: ");
+        int hexInput = sc.nextInt();
+        System.out.println(intToHex(hexInput));
+        
+        // Not sure if you want scanner for this one, but here are hard coded values if not.
         // System.out.println(intToHex(543));
         // System.out.println(intToHex(123));
         // System.out.println(intToHex(17));
         // System.out.println(intToHex(16));
         // System.out.println(intToHex(15));
-        // System.out.println("===================");
+        System.out.println("===================");
 
-        // TEST: Question 3, part B
-        // i.
-        // double t = 9.0;
-        // while (Math.abs(t-9.0/t) > .001) {
-        //     t = (9.0/t + t) / 2.0;
-        // }
-        // System.out.println(t);
-        // ii.
-        // System.out.printf("%03d",7);
-        // iii.
-        String s = "Bye Bye Bye";
-        s = s.replace('y', 'e');
-        System.out.println(s);
+        // // TEST: Question 3, part B
+        // // i.
+        // // double t = 9.0;
+        // // while (Math.abs(t-9.0/t) > .001) {
+        // //     t = (9.0/t + t) / 2.0;
+        // // }
+        // // System.out.println(t);
+        // // ii.
+        // // System.out.printf("%03d",7);
+        // // // iii.
+        // // String s = "Bye Bye Bye";
+        // // s = s.replace('y', 'e');
+        // // System.out.println(s);
 
     }
     /**
@@ -92,9 +106,10 @@ public class Lab3Exercises {
         
         // Get last 3 digits. Precede numbers smaller than 3 digits with zeroes
         String last3Digits = Integer.toString(userInput);
-        for (int i = 0; i < last3Digits.length(); i++){
-            System.out.println("index: " + i);
-        }
+        // for (int i = 0; i < last3Digits.length(); i++){
+        //     System.out.println("index: " + i);
+        //     userInput
+        // }
         if (last3Digits.length() > 3){
             last3Digits = last3Digits.substring(last3Digits.length()-3, last3Digits.length());
         } else {
@@ -143,6 +158,13 @@ public class Lab3Exercises {
      *      true = (xxx) xxx-xxxx
      *      false = xxx-xxx-xxxx
      * @return formatted telephone number
+     * Pseudocode:
+     *      Initialize strings
+     *      Check if option is true
+     *          if yes, apply formatting (xxx) xxx-xxxx
+     *      Check if option is false
+     *          if yes, apply formatting xxx-xxx-xxxx
+     *      return formatted String
      */
     public static String formatPhoneNumber(String myNumber, boolean option){
         String formattedNumber = "";
@@ -182,12 +204,14 @@ public class Lab3Exercises {
         while (in.hasNextInt()) {
             System.out.println("Please enter a number between 5-19: ");
             int userInput = in.nextInt();
+            
+            // Check for additional constraints
             if (!(userInput < 5 || userInput > 19) && 
                 !(commaSepNumbers.contains(Integer.toString(userInput)))) {
                 commaSepNumbers.add(Integer.toString(userInput));
             }
         }
-        in.close();
+        // in.close();
 
         // Convert ArrayList to string and add commas
         String totalNumbers = "";
@@ -217,9 +241,9 @@ public class Lab3Exercises {
         } else if (letterGrade == 'C') {
             gradeReport = "Your grade is between a 73.0 and 82.9";
         } else if (letterGrade == 'D') {
-            gradeReport = "Your grade is between a 83.0 and 93.0";
+            gradeReport = "Your grade is between a 63.0 and 72.9";
         } else if (letterGrade == 'F') {
-            gradeReport = "Your grade is less than 63.0";
+            gradeReport = "Your grade is less than a 63.0";
         }
 
         return gradeReport;
@@ -228,8 +252,8 @@ public class Lab3Exercises {
      * Converts an integer value in base 10 to its hexidecimal value in base 16
      * Each hexidecimal value is preceded by 0x notation
      * Numbers <
-     * @param n
-     * @return
+     * @param n int value (base 10)
+     * @return hexidecimal representation of int value n
      */
     public static String intToHex(int n) {
         String hexidecimal = "0x";
