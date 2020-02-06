@@ -29,7 +29,7 @@ public class Lab3Tester {
     @Test
     public void testGrade() {
         assertEquals("Your grade is between a 93.0 and 100", Lab3Exercises.grade('A'));
-        assertEquals("Your grade is less than 63.0", Lab3Exercises.grade('F'));
+        assertEquals("Your grade is less than a 63.0", Lab3Exercises.grade('F'));
     }
 
     @Test
