@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Lab4Exercises",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab4.Lab4Exercises",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
