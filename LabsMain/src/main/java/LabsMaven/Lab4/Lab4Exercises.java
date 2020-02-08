@@ -27,6 +27,8 @@ public class Lab4Exercises {
         // System.out.println("=========================");
 
 
+        patternMenu();
+
     }
     
     /**
@@ -114,7 +116,7 @@ public class Lab4Exercises {
      * Takes an input option from the user: A,B,C,E
      * E exits the menu
      * Anything other than these values will prompt user to enter again
-     *  
+     * 
      */
     public static void patternMenu() {
         
@@ -122,17 +124,35 @@ public class Lab4Exercises {
         char menuB = 'B';
         char menuC = 'C';
         char exitMenu = 'E';
+        char input;
 
         Scanner option = new Scanner(System.in);
         
-        System.out.println("Welcome to the Game.");
-        System.out.println("To play type: A or B or C");
-        System.out.println("To exit game: E");
+        // System.out.println("Welcome to the Game.");
+        // System.out.println("To play type: A or B or C");
+        // System.out.println("To exit game: E");
         
-        char input = option.next().charAt(0);
-        while (!(input == exitMenu) {
+        // do {
+        //     System.out.println("Welcome to the Game.\nTo play type: A or B or C");
+        //     System.out.println("To exit game: E\nEnter Menu: ");
+        //     input = option.next().charAt(0);
+
+        //     if (!(input == menuA || input == menuB || input == menuC)) {
+        //         System.out.println("Invalid input. Please enter A,B,C or E to Exit");
+        //     } else {
+        //         System.out.println("test working");
+        //     }
+        // } while (option.hasNext());
+        
+        while (option.hasNext()) {
+            System.out.println("Welcome to the Game.\nTo play type: A or B or C");
+            System.out.println("To exit game: E\nEnter Menu: ");
+        
+            input = option.next().charAt(0);
             if (!(input == menuA || input == menuB || input == menuC)) {
-                System.out.println();
+                System.out.println("Invalid input. Please enter A,B,C or E to Exit");
+            } else {
+                System.out.println("test working");
             }
 
         }
