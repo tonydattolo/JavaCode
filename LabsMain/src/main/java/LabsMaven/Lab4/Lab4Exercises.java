@@ -78,7 +78,7 @@ public class Lab4Exercises {
     }
     /**
      * Helper function for romanNumeralToInt method
-     * Takes in a char r,
+     * Takes in a char r and returns an assigned int value
      * @param r roman numeral value
      * @return int value of roman numeral
      */
@@ -120,44 +120,105 @@ public class Lab4Exercises {
      */
     public static void patternMenu() {
         
-        char menuA = 'A';
-        char menuB = 'B';
-        char menuC = 'C';
-        char exitMenu = 'E';
         char input;
-
+        boolean playing = true;
         Scanner option = new Scanner(System.in);
         
-        // System.out.println("Welcome to the Game.");
-        // System.out.println("To play type: A or B or C");
-        // System.out.println("To exit game: E");
-        
-        // do {
-        //     System.out.println("Welcome to the Game.\nTo play type: A or B or C");
-        //     System.out.println("To exit game: E\nEnter Menu: ");
-        //     input = option.next().charAt(0);
-
-        //     if (!(input == menuA || input == menuB || input == menuC)) {
-        //         System.out.println("Invalid input. Please enter A,B,C or E to Exit");
-        //     } else {
-        //         System.out.println("test working");
-        //     }
-        // } while (option.hasNext());
-        
-        while (option.hasNext()) {
-            System.out.println("Welcome to the Game.\nTo play type: A or B or C");
-            System.out.println("To exit game: E\nEnter Menu: ");
+        while (playing == true) {
+            System.out.println("Welcome to the Game.\nMenu Options: A or B or C");
+            System.out.print("To exit: E\nEnter Menu: ");
         
             input = option.next().charAt(0);
-            if (!(input == menuA || input == menuB || input == menuC)) {
-                System.out.println("Invalid input. Please enter A,B,C or E to Exit");
-            } else {
-                System.out.println("test working");
-            }
 
+            switch (input) {
+                case 'A':
+                    System.out.print("Enter a number greater than 1: ");
+                    int numA = option.nextInt();
+
+                    break;
+                case 'B':
+                    System.out.print("Enter a number greater than 1: ");
+                    int numB = option.nextInt();
+                    shape2B(numB);
+                    break;
+                case 'C':
+                    System.out.print("Enter a number greater than 1: ");
+                    int numC = option.nextInt();
+                    shape2C(numC);
+                    break;
+                case 'E':
+                    System.out.print("Exiting game...");
+                    playing = false;
+                    break;
+                default:
+                    System.out.print("Invalid menu option, let's try again =]");
+                    break;
+            }
         }
-        
     }
+
+    /**
+     * Helper function for patternMenu
+     * Takes in number of rows n
+     * prints pyramid pattern
+     * @param n number of rows in shape
+     */
+    public static void shape2B(int n) {
+
+        int leftSpace = n-1;
+        int midSpace = 1;
+
+        for (int i = 0; i < n; i++) {
+            if (i == 0) {
+                System.out.println(" ".repeat(leftSpace) + "*");
+                leftSpace--;
+            } else if (i < n-1) {
+                System.out.println(" ".repeat(leftSpace) + "*" + " ".repeat(midSpace) + "*");
+                leftSpace--;
+                midSpace+=2;
+            } else {
+                System.out.println("*".repeat(n*2-1));
+            }
+        }
+    }
+
+    /**
+     * Helper function for patternMenu
+     * Takes in number of rows n
+     * prints diamond pattern
+     * @param n number of rows in shape
+     */
+    public static void shape2C(int n){
+
+        int firstHalf = n;
+        int secondHalf = n - 1;
+        int leftSpace = n-1;
+        int midSpace = 1;
+
+        for (int i = 0; i < firstHalf+secondHalf; i++) {
+            
+            if (i == 0) {
+                System.out.println(" ".repeat(leftSpace) + "*");
+                leftSpace--;
+            }
+            if (i != 0 && i < firstHalf-1) {
+                System.out.println(" ".repeat(leftSpace) + "*" + " ".repeat(midSpace) + "*");
+                midSpace+=2;
+                leftSpace--;
+
+            }
+            if (i >= firstHalf && i < (firstHalf + secondHalf)) {
+                System.out.println(" ".repeat(leftSpace) + "*" + " ".repeat(midSpace) + "*");
+                midSpace-=2;
+                leftSpace++;
+                
+            }
+            if (i == (firstHalf + secondHalf - 1)) {
+                System.out.println(" ".repeat(leftSpace) + "*");
+            }
+        }
+    }
+
 
     public static boolean shuffleChecker(String input) {
 

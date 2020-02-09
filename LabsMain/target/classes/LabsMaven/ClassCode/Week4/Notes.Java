@@ -51,6 +51,22 @@ public class Notes {
         System.out.println(8>>2);
         System.out.println(2<<2);
         
-        
+        char grade;
+        Scanner sc = new Scanner(System.in);
+        grade = sc.next().charAt(0);
+
+        switch (grade) {
+            case 'A':
+                dosomething;
+                break;
+            case 'B':
+                break;
+            case 'C':
+                break;
+            case 'D':
+                break;
+            default:
+                break;
+        }
     }
 }

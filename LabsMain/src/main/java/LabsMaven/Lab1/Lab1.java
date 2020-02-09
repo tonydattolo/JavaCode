@@ -12,7 +12,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 // On system path package
-// package Labs.Lab1;
+package LabsMaven.Lab1;
 
 // What fields does the System class have?
 // err - error output stream

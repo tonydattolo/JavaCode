@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - scrapLab4",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab4.scrapLab4",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Lab4Exercises",
             "request": "launch",
             "mainClass": "LabsMaven.Lab4.Lab4Exercises",
