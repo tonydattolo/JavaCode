@@ -125,8 +125,11 @@ public class Lab4Exercises {
         Scanner option = new Scanner(System.in);
         
         while (playing == true) {
-            System.out.println("Welcome to the Game.\nMenu Options: A or B or C");
-            System.out.print("To exit: E\nEnter Menu: ");
+            System.out.println("Select a Menu Option:\n" +
+                                "A. Pattern 1\n" +
+                                "B. Pattern 2\n" +
+                                "C. Pattern 3\n" +
+                                "E. Exit Menu");
         
             input = option.next().charAt(0);
 
@@ -147,7 +150,7 @@ public class Lab4Exercises {
                     shape2C(numC);
                     break;
                 case 'E':
-                    System.out.print("Exiting game...");
+                    System.out.print("Exiting menu...");
                     playing = false;
                     break;
                 default:
@@ -158,7 +161,7 @@ public class Lab4Exercises {
     }
 
     /**
-     * Helper function for patternMenu
+     * Helper function for patternMenu, pattern B
      * Takes in number of rows n
      * prints pyramid pattern
      * @param n number of rows in shape
@@ -183,7 +186,7 @@ public class Lab4Exercises {
     }
 
     /**
-     * Helper function for patternMenu
+     * Helper function for patternMenu, pattern C
      * Takes in number of rows n
      * prints diamond pattern
      * @param n number of rows in shape
