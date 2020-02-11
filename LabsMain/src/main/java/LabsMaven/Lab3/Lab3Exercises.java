@@ -15,7 +15,6 @@
 package LabsMaven.Lab3;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Lab3Exercises {
