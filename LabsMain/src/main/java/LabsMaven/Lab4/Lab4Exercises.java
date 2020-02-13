@@ -37,7 +37,7 @@ public class Lab4Exercises {
         // System.out.println("=========================");
 
         // TEST: patternMenu method
-        // patternMenu();
+        patternMenu();
 
         // TEST: randomNumMaxFreqRemover method
         randomNumMaxFreqRemover();

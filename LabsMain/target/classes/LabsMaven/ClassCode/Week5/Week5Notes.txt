@@ -1,3 +1,0 @@
-ARRAYS
-
-double[] values = new double[10]; //gives you space for 10 doubles
