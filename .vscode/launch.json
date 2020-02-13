@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Audi",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab4.Audi",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - scrapLab4",
             "request": "launch",
             "mainClass": "LabsMaven.Lab4.scrapLab4",

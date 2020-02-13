@@ -7,7 +7,6 @@ package LabsMaven.MiniHWs;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-
 import javax.swing.JComponent;
 
 public class DrawComponents extends JComponent{

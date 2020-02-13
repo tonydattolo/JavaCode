@@ -3,80 +3,52 @@ package LabsMaven.Lab4;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.xml.stream.events.Characters;
+
 /**
  * scrapLab4
  */
 public class scrapLab4 {
 
     public static void main(String[] args) {
-        shape9();
-
-
-
-
+        System.out.println(shuffleChecker("abc", "Def", "dabecf"));
+        System.out.println(shuffleChecker("abc", "Def", "zabcde"));
+        System.out.println(shuffleChecker("abc", "Def", "AAAAAA"));
+        System.out.println(shuffleChecker("abc", "Def", "zzzzzz"));
+        System.out.println(shuffleChecker("abc", "Def", "abc"));
+        
     }
-    public static void shape9() {
 
-        String numbers = "";
-        String randomNumbers = "";
+    public static boolean shuffleChecker(String input1, String input2, String input3) {
         
-        Random randomNums = new Random();
+        // Initialize values to check given contraints ignoring case
+        String combined = input1.toLowerCase() + input2.toLowerCase();
+        String thirdInput = input3.toLowerCase();
 
-        // Generate 10 random numbers between 1-10
-        for (int i = 0; i < 10; i++) {
-            int num = randomNums.nextInt(9)+1;
-            numbers += Integer.toString(num);
-            if (!(i == 9)) {
-                randomNumbers += Integer.toString(num) + ',';
-            } else {
-                randomNumbers += Integer.toString(num);
-            }
-            
+        // Check if comparisons have equal length
+        if (combined.length() != thirdInput.length()) {
+            return false;
         }
-        System.out.println("Random Numbers = " + randomNumbers + "\nFrequency:");
-
         
-        char removeMostFrequent = '0';
-        int frequencyCounter = 0;
-
-        // Count frequency values of each number
-        for (int i = 1; i <= 10; i++) {
-            int counter = 0;
-            char num0 = Character.forDigit(i,10);
-            // char num0 = (char)(i + '0');
-            for (int j = 0; j < numbers.length(); j++) {
-                char num1 = numbers.charAt(j);
-                if (num0 == num1) {
-                    counter++;
+        // For each character in thirdInput, check if it exists in combined (input1 + input2)
+        for (int i = 0; i < thirdInput.length(); i++) {
+            boolean inputInCombinedTest = false;
+            
+            // Check if current letter of input3 is contained anywhere in input1 & 2
+            for (int j = 0; j < thirdInput.length(); j++) {
+                if (thirdInput.charAt(i) == combined.charAt(j)) {
+                    inputInCombinedTest = true;
                 }
             }
-            
-            //print out frequency of each num
-            if (counter > 0) {
-                System.out.println(i + " -> " + counter);
+
+            // Check if there were no matches when comparing chars
+            if (inputInCombinedTest == false) {
+                return false;
             }
 
-            //check to see if number is most frequent
-            //if it is, update new value to remove
-            if (counter > frequencyCounter) {
-                frequencyCounter = counter;
-                removeMostFrequent = num0;
-            }
         }
-
-        // Remove most frequent number, and print comma separated string of values
-        System.out.println("Deleting the Numbers with Max Frequency...");
-        String randomNumbersRemoved = "";
-        for (int i = 0; i < numbers.length(); i++) {
-            if (!(numbers.charAt(i) == removeMostFrequent)) {
-                if (i != numbers.length()-1) {
-                    randomNumbersRemoved += numbers.charAt(i) + ",";
-                } else {
-                    randomNumbersRemoved += numbers.charAt(i);
-                }
-                
-            }
-        }
-        System.out.println("Random Numbers = " + randomNumbersRemoved);
+        return true;
     }
+
+    
 }

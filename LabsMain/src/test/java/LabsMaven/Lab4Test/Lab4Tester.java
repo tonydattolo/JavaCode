@@ -1,3 +1,7 @@
+/**
+ * JUnit Tester class for Lab4Exercises.java
+ */
+
 package LabsMaven.Lab4Test;
 
 import LabsMaven.Lab4.Lab4Exercises;
@@ -12,8 +16,13 @@ public class Lab4Tester {
         assertEquals(1978, Lab4Exercises.romanNumeralToInt("MCMLXXVIII"));
     }
 
-    public void shuffleCheckerTest() {
-        // assertEquals(expected, actual);
+    @Test
+    public void charsInStringsCheckerTest() {
+        assertEquals(true, Lab4Exercises.charsInStringsChecker("abc", "Def", "dabecf"));
+        assertEquals(false, Lab4Exercises.charsInStringsChecker("abc", "Def", "zabcde"));
+        assertEquals(true, Lab4Exercises.charsInStringsChecker("abc", "Def", "AAAAAA"));
+        assertEquals(false, Lab4Exercises.charsInStringsChecker("abc", "Def", "zzzzzz"));
+        assertEquals(false, Lab4Exercises.charsInStringsChecker("abc", "Def", "abcDe"));
     }
     
 }

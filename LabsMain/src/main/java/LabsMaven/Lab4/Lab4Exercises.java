@@ -5,7 +5,7 @@
 //
 //  Lab 4
 //  @Author  Tony Dattolo, tdattolo
-//  Last Edited:  2/10/2020
+//  Last Edited:  2/12/2020
 //
 //
 //  Directions: Implement assigned methods and testing as described in Lab4.pdf
@@ -20,7 +20,16 @@ import java.util.Scanner;
 public class Lab4Exercises {
 
     public static void main(String[] args) {
-        // TEST: romanNumeralToInt method
+
+        //JUnit tests for romanNumeralToInt and charsInStringsChecker located in Lab4Tester.java
+
+        // SCANNER TESTS: romanNumeralToInt method 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter value to check romanNumeralToInt method: ");
+        String testRoman = sc.next();
+        System.out.println(romanNumeralToInt(testRoman) + "\n\n");
+
+        // STATIC TESTS: romanNumeralToInt method
         // System.out.println(romanNumeralToInt("X"));
         // System.out.println(romanNumeralToInt("LII"));
         // System.out.println(romanNumeralToInt("III"));
@@ -31,8 +40,26 @@ public class Lab4Exercises {
         // patternMenu();
 
         // TEST: randomNumMaxFreqRemover method
-        // randomNumMaxFreqRemover();
+        randomNumMaxFreqRemover();
 
+        // SCANNER TEST: charsInStringsChecker method
+        System.out.println("Test for charsInStringsChecker method");
+        System.out.println("Enter string 1: ");
+        String testStr1 = sc.next();
+        System.out.println("Enter string 2: ");
+        String testStr2 = sc.next();
+        System.out.println("Enter string 3: ");
+        String testStr3 = sc.next();
+        System.out.println(charsInStringsChecker(testStr1, testStr2, testStr3) + "\n\n");
+        
+        // STATIC TESTS: charsInStringsChecker method
+        // System.out.println(charsInStringsChecker("abc", "Def", "dabecf"));
+        // System.out.println(charsInStringsChecker("abc", "Def", "zabcde"));
+        // System.out.println(charsInStringsChecker("abc", "Def", "AAAAAA"));
+        // System.out.println(charsInStringsChecker("abc", "Def", "zzzzzz"));
+        // System.out.println(charsInStringsChecker("abc", "Def", "abc"));
+
+        sc.close();
     }
     
     /**
@@ -59,12 +86,18 @@ public class Lab4Exercises {
      *                  add index val to total
      */
     public static int romanNumeralToInt(String roman) {
+        
+        // Base case, if input is empty, return 0
         if (roman == "") {
             return 0;
         }
 
+        // Accumulator variable for total value of roman numeral given
         int total = 0;
         
+        // Add first value to total. For subsequent, check if curr value > prev value
+        // If yes, subtract previous value twice, and add curr value to running total
+        // If no, add current value to running total
         for (int i = 0; i < roman.length(); i++){
             if (i == 0) {
                 total += charVal(roman.charAt(i));
@@ -154,11 +187,11 @@ public class Lab4Exercises {
                     shape2C(numC);
                     break;
                 case 'E':
-                    System.out.print("Exiting menu...");
+                    System.out.print("Exiting menu...\n\n");
                     playing = false;
                     break;
                 default:
-                    System.out.print("Invalid menu option, let's try again =]");
+                    System.out.print("Invalid menu option, let's try again =]\n");
                     break;
             }
         }
@@ -318,24 +351,58 @@ public class Lab4Exercises {
         String randomNumbersRemoved = "";
         for (int i = 0; i < numbers.length(); i++) {
             if (!(numbers.charAt(i) == removeMostFrequent)) {
-                if (i != numbers.length()-1) {
-                    randomNumbersRemoved += numbers.charAt(i) + ",";
-                } else {
+                if (i == numbers.length()-1) {
                     randomNumbersRemoved += numbers.charAt(i);
+                } else {
+                    randomNumbersRemoved += numbers.charAt(i) + ",";
                 }
                 
             }
         }
-        System.out.println("Random Numbers = " + randomNumbersRemoved);
+        System.out.println("Random Numbers = " + randomNumbersRemoved + "\n");
     }
 
-    public static boolean shuffleChecker(String input) {
+    /**
+     * Takes in 3 strings. The third will be compared to the concatenation of the first two.
+     * Constraints are:
+     * 1.) the length of 3rd string must equal length of 1st and 2nd string combined.
+     * 2.) 3rd string should consist of letters only from 1st and 2nd string.
+     * 
+     * @param input1 First String
+     * @param input2 Second String
+     * @param input3 String to compare to (input1 + input2)
+     * @return True if satisfies constraints, False if not
+     */
+    public static boolean charsInStringsChecker(String input1, String input2, String input3) {
+        
+        // Initialize values to check given contraints ignoring case
+        String combined = input1.toLowerCase() + input2.toLowerCase();
+        String thirdInput = input3.toLowerCase();
 
+        // Check if comparisons have equal length
+        if (combined.length() != thirdInput.length()) {
+            return false;
+        }
+        
+        // For each character in thirdInput, check if it exists in combined (input1 + input2)
+        for (int i = 0; i < thirdInput.length(); i++) {
+            boolean inputInCombinedTest = false;
+            
+            // Check if current letter of input3 is contained anywhere in input1 & 2
+            for (int j = 0; j < thirdInput.length(); j++) {
+                if (thirdInput.charAt(i) == combined.charAt(j)) {
+                    inputInCombinedTest = true;
+                }
+            }
+
+            // Check if there were no matches when comparing chars
+            if (inputInCombinedTest == false) {
+                return false;
+            }
+
+        }
         return true;
     }
 
-    public static void drawAudiLogo() {
-
-    }
 
 }

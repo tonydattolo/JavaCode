@@ -6,7 +6,6 @@
 
 package LabsMaven.MiniHWs;
 
-import java.awt.*;
 import javax.swing.*;
 
 public class RecRecCirc extends JComponent {
