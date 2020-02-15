@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * Lab5Exercises class. Holds functionality for Lab5 requirements.
+ * Lab5Exercises class. Holds functionality for Lab5 requirements pset 1 & 2.
  */
 public class Lab5Exercises {
 
@@ -33,11 +33,12 @@ public class Lab5Exercises {
         for (int i = 0; i < rollEm.length; i++) {
             rollEm[i] = rollGenerator.nextInt(6) + 1;
         }
-        System.out.println(longestRun(rollEm));
+        System.out.println("longestRun test: \n\n" + longestRun(rollEm));
 
         // TEST: bulgarianSolitaire
-        ArrayList<Integer> testBS = new ArrayList<Integer>(Arrays.asList(20,5,1,9,10)); 
-        bulgarianSolitaire(testBS);
+        ArrayList<Integer> testBulSol = new ArrayList<Integer>(Arrays.asList(20,5,1,9,10)); 
+        System.out.println("\nbulgarianSolitaire test: \n");
+        bulgarianSolitaire(testBulSol);
     }
 
     /**
@@ -106,42 +107,39 @@ public class Lab5Exercises {
         return longRun;
     }
 
+    /**
+     * Takes in an ArrayList of Integers (piles) that equals 45.
+     * Takes a card from each pile and adds it to a new pile at the end of the list.
+     * Ending state is any sequence containing: 1,2,3,4,5,6,7,8,9.
+     * Prints out state of piles at each iteration. 
+     * @param cards Assortment of values that add up to 45
+     */
     public static void bulgarianSolitaire(ArrayList<Integer> cards) {
 
-        System.out.println(cards);
         // Set complete game state
         ArrayList<Integer> complete = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9));
 
 
-
-        int depthStop = 0;
-        // while (cards.size() != 9) {
+        // Check is state is not complete
         while (!(cards.containsAll(complete))) {
             
-            for (int j = 0; j < cards.size(); j++) {
-                if (cards.get(j) == 0) {
-                    cards.remove(j);
-                }
+            // Remove all 0's
+            while (cards.contains(0)) {
+                cards.remove(cards.indexOf(0));
             }
-            System.out.println("t1: " + cards);
+            
+            // Decrement each pile by 1, and create new pile with value of decrements
             int pile = 0;
 
             for (int i = 0; i < cards.size(); i++) {
-                
-                Integer test = cards.get(i);
-                test--;
+                Integer test = cards.get(i) - 1;
                 cards.set(i, test);
                 pile++;
             }
             cards.add(pile);
-            System.out.println(cards);
-            
-            depthStop++;
-            if (depthStop == 25) {
-                break;
-            }
-        }
 
-        System.out.println(cards);
+            // Show current state of piles
+            System.out.println(cards);
+        }
     }
 }
