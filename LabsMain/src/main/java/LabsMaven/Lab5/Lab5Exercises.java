@@ -36,8 +36,8 @@ public class Lab5Exercises {
         System.out.println(longestRun(rollEm));
 
         // TEST: bulgarianSolitaire
-        ArrayList<Integer> testBS = new ArrayList<Integer>(Arrays.asList(20,5,0,9,10)); 
-
+        ArrayList<Integer> testBS = new ArrayList<Integer>(Arrays.asList(20,5,1,9,10)); 
+        bulgarianSolitaire(testBS);
     }
 
     /**
@@ -84,7 +84,7 @@ public class Lab5Exercises {
             }
         }
 
-        // Set variable show longest run with parentheses and space separated
+        // Set variable to show longest run with parentheses and space separated
         String longRun = "";
         
         for (int i = 0; i < numbers.length; i++) {
@@ -106,8 +106,42 @@ public class Lab5Exercises {
         return longRun;
     }
 
-    public static void bulgarianSolitaire(ArrayList<Integer> arr) {
-        
-        
+    public static void bulgarianSolitaire(ArrayList<Integer> cards) {
+
+        System.out.println(cards);
+        // Set complete game state
+        ArrayList<Integer> complete = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9));
+
+
+
+        int depthStop = 0;
+        // while (cards.size() != 9) {
+        while (!(cards.containsAll(complete))) {
+            
+            for (int j = 0; j < cards.size(); j++) {
+                if (cards.get(j) == 0) {
+                    cards.remove(j);
+                }
+            }
+            System.out.println("t1: " + cards);
+            int pile = 0;
+
+            for (int i = 0; i < cards.size(); i++) {
+                
+                Integer test = cards.get(i);
+                test--;
+                cards.set(i, test);
+                pile++;
+            }
+            cards.add(pile);
+            System.out.println(cards);
+            
+            depthStop++;
+            if (depthStop == 25) {
+                break;
+            }
+        }
+
+        System.out.println(cards);
     }
 }
