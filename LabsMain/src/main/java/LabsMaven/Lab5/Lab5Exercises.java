@@ -18,6 +18,7 @@ package LabsMaven.Lab5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Lab5Exercises class. Holds functionality for Lab5 requirements pset 1 & 2.
@@ -26,19 +27,53 @@ public class Lab5Exercises {
 
     public static void main(String[] args) {
 
-        //TEST: longestRun method
-        final int DIE_TOSSES = 20;
-        Random rollGenerator = new Random();
-        int[] rollEm = new int[DIE_TOSSES];
-        for (int i = 0; i < rollEm.length; i++) {
-            rollEm[i] = rollGenerator.nextInt(6) + 1;
-        }
-        System.out.println("longestRun test: \n\n" + longestRun(rollEm));
+        // //TEST: longestRun method
+        // final int DIE_TOSSES = 20;
+        // Random rollGenerator = new Random();
+        // int[] rollEm = new int[DIE_TOSSES];
+        // for (int i = 0; i < rollEm.length; i++) {
+        //     rollEm[i] = rollGenerator.nextInt(6) + 1;
+        // }
+        // System.out.println("longestRun test: \n\n" + longestRun(rollEm));
 
-        // TEST: bulgarianSolitaire
-        ArrayList<Integer> testBulSol = new ArrayList<Integer>(Arrays.asList(20,5,1,9,10)); 
-        System.out.println("\nbulgarianSolitaire test: \n");
-        bulgarianSolitaire(testBulSol);
+        // // TEST: bulgarianSolitaire
+        // ArrayList<Integer> testBulSol = new ArrayList<Integer>(Arrays.asList(20,5,1,9,10)); 
+        // System.out.println("\nbulgarianSolitaire test: \n");
+        // bulgarianSolitaire(testBulSol);
+
+        // TEST: Matrix class
+        Scanner in = new Scanner(System.in);
+        // System.out.println("Enter number of rows in matrix: ");
+        // int mRows = in.nextInt();
+        // System.out.println("Enter number of cols in matrix: ");
+        // int mCols = in.nextInt();
+
+        int mRows = 4;
+        int mCols = 4;
+
+        boolean[][] test = new boolean[mRows][mCols];
+        // System.out.println("Change values in matrix to true as needed. Enter any non-int value to");
+        // while (in.hasNextInt()) {
+        //     System.out.println("Enter index row location to change to true: ");
+        //     int changeRows = in.nextInt();
+        //     System.out.println("Enter index row location to change to true: ");
+        //     int changeCols = in.nextInt();
+        //     test[changeRows][changeCols] = true;
+        // }
+
+        test[1][1] = true;
+        for (int i = 0; i < test.length; i++) {
+            for (int j = 0; j < test[0].length; j++) {
+                System.out.print(test[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+
+
+
+
+        // Matrix testMatrix = new Matrix(m);
     }
 
     /**
@@ -123,11 +158,6 @@ public class Lab5Exercises {
         // Check is state is not complete
         while (!(cards.containsAll(complete))) {
             
-            // Remove all 0's
-            while (cards.contains(0)) {
-                cards.remove(cards.indexOf(0));
-            }
-            
             // Decrement each pile by 1, and create new pile with value of decrements
             int pile = 0;
 
@@ -137,6 +167,11 @@ public class Lab5Exercises {
                 pile++;
             }
             cards.add(pile);
+
+            // Remove all 0's
+            while (cards.contains(0)) {
+                cards.remove(cards.indexOf(0));
+            }
 
             // Show current state of piles
             System.out.println(cards);

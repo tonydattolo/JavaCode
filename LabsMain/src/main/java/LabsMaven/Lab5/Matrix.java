@@ -28,14 +28,70 @@ public class Matrix {
 
 
     public Matrix(boolean[][] m) {
-        NUMCOL = m;
-        NUMROW = m;
+        this.matrix = m;
+        this.NUMROW = m.length;
+        this.NUMCOL = m[0].length;
+        
     }
 
     @Override
     public String toString() {
-        return "Matrix [matrix=" + Arrays.toString(matrix) + "]";
+
+        // Change boolean values to 1s and 0s
+        int[][] onesAndZeros = new int[this.NUMROW][this.NUMCOL];
+        
+        for (int i = 0; i < this.NUMROW; i ++) {
+            for (int j = 0; j < this.NUMCOL; j++) {
+                if (matrix[i][j] == true) {
+                    onesAndZeros[i][j] = 1;
+                } else {
+                    onesAndZeros[i][j] = 0;
+                }
+            }
+        }
+
+        String matrixPrinter = "[";
+
+        for (int i = 0; i < this.NUMROW; i ++) {
+            for (int j = 0; j < this.NUMCOL; j++) {
+                if (j == this.NUMCOL - 1) {
+                    matrixPrinter += onesAndZeros[i][j];
+                } else {
+                    matrixPrinter += onesAndZeros[i][j] + ", ";    
+                }
+                
+            }
+            matrixPrinter += "\n";
+        }
+        return matrixPrinter;
+        // return "Matrix [matrix=" + Arrays.toString(matrix) + "]";
     }
     
+    public Matrix transposeMatrix() {
+
+    }
     
+    public boolean isSquareMatrix() {
+
+    }
+
+    public Matrix rotateClockwise() {
+
+    }
+
+    public Matrix rotateCounterClockwise() {
+
+    }
+
+    public String percentageTrue() {
+
+    }
+
+    public boolean isEqual(Matrix m) {
+
+    }
+
+
+
+
 }
