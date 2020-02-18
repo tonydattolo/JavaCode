@@ -27,6 +27,10 @@ public class Matrix {
     private final int NUMCOL;
 
 
+    /**
+     * Constructor method for Matrix class
+     * @param m 2D boolean[][] array
+     */
     public Matrix(boolean[][] m) {
         this.matrix = m;
         this.NUMROW = m.length;
@@ -53,6 +57,7 @@ public class Matrix {
         String matrixPrinter = "[";
 
         for (int i = 0; i < this.NUMROW; i ++) {
+
             for (int j = 0; j < this.NUMCOL; j++) {
                 if (j == this.NUMCOL - 1) {
                     matrixPrinter += onesAndZeros[i][j];
@@ -61,35 +66,39 @@ public class Matrix {
                 }
                 
             }
-            matrixPrinter += "\n";
+            if (i != this.NUMROW - 1) {
+                matrixPrinter += "\n";    
+            }
+            
         }
+        matrixPrinter += "]";
         return matrixPrinter;
         // return "Matrix [matrix=" + Arrays.toString(matrix) + "]";
     }
     
-    public Matrix transposeMatrix() {
+    // public Matrix transposeMatrix() {
 
-    }
+    // }
     
-    public boolean isSquareMatrix() {
+    // public boolean isSquareMatrix() {
 
-    }
+    // }
 
-    public Matrix rotateClockwise() {
+    // public Matrix rotateClockwise() {
 
-    }
+    // }
 
-    public Matrix rotateCounterClockwise() {
+    // public Matrix rotateCounterClockwise() {
 
-    }
+    // }
 
-    public String percentageTrue() {
+    // public String percentageTrue() {
 
-    }
+    // }
 
-    public boolean isEqual(Matrix m) {
+    // public boolean isEqual(Matrix m) {
 
-    }
+    // }
 
 
 

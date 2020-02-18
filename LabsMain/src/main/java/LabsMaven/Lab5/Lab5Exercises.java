@@ -69,6 +69,9 @@ public class Lab5Exercises {
             System.out.println();
         }
 
+        Matrix testMatrix = new Matrix(test);
+        
+        System.out.println(testMatrix.toString());
 
 
 
