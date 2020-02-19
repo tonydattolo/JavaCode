@@ -5,11 +5,13 @@
 //
 //  Lab 5
 //  @Author  Tony Dattolo, tdattolo
-//  Last Edited:  2/15/2020
+//  Last Edited:  2/18/2020
 //
 //
 //  Directions: Implement assigned methods and testing as described in Lab5.pdf
-//              Problems 1 & 2 located here. Problem 3 located in Matrix.java
+//              Problems 1 & 2 located here. Problem 3 unit testing done here
+//              Matrix class source code for problem 3 located in Matrix.java
+//              JUnit Testing located in Lab5Tester.java
 //               
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -71,12 +73,58 @@ public class Lab5Exercises {
 
         Matrix testMatrix = new Matrix(test);
         
-        System.out.println(testMatrix.toString());
+        System.out.println("Test .toString(): \n" + testMatrix.toString());
 
+        // TEST: .transposeMatrix method
+        boolean[][] testTrans = {
+            {true,true,true,true},
+            {false,true,false,true},
+            {false,true,true,true},
+            {true,true,false,true}
+        };
 
+        Matrix testTransMatrix = new Matrix(testTrans);
+        System.out.println("Test .transposeMatrix(): \n" 
+                            + testTransMatrix.transposeMatrix().toString());
 
+        // TEST: .rotateClockwise method
+        boolean[][] testRotateClockwise = {
+            {true,true,true,true},
+            {true,true,false,false},
+            {true,true,true,true}
+        };
 
-        // Matrix testMatrix = new Matrix(m);
+        Matrix testRotClock = new Matrix(testRotateClockwise);
+        System.out.println("Test .rotateClockwise(): \n" 
+                            + testRotClock.rotateClockwise().toString());
+
+        // TEST: .rotateCounterClockwise method
+        boolean[][] testCounterClockwise = {
+            {true,true,true},
+            {true,true,true},
+            {true,false,true},
+            {true,false,true}
+        };
+
+        Matrix testRotCountClock = new Matrix(testCounterClockwise);
+
+        System.out.println("Test: .rotateCounterClockwise: \n" 
+                            + testRotCountClock.rotateCounterClockwise().toString());
+
+        // TEST: .percentageTrue method
+        boolean[][] percentTrueTest = {
+            {true,true,true,true},
+            {false,false,false,false},
+            {false,false,false,false},
+            {true,true,true,true}
+        };
+
+        Matrix testPerTrue = new Matrix(percentTrueTest);
+        System.out.println("Test: .percentTrue: \n" 
+                            + testPerTrue.percentageTrue());
+
+        // TEST: isEqual method
+        
     }
 
     /**
