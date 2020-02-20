@@ -12,6 +12,12 @@
 //              Problems 1 & 2 located here. Problem 3 unit testing done here
 //              Matrix class source code for problem 3 located in Matrix.java
 //              JUnit Testing located in Lab5Tester.java
+// 
+// NOTE TO GRADER: I commented out the scanner testing for methods other than toString
+//                 because the instructions say to test the given matrices below the problems.
+//                 I've included scanner method testing for all of them, and commented them out
+//                 if that is in fact what you wanted, on lines 91-107.
+//                 The examples from the pdf to test have been hard coded in on lines 118-196.
 //               
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -29,51 +35,84 @@ public class Lab5Exercises {
 
     public static void main(String[] args) {
 
-        // //TEST: longestRun method
-        // final int DIE_TOSSES = 20;
-        // Random rollGenerator = new Random();
-        // int[] rollEm = new int[DIE_TOSSES];
-        // for (int i = 0; i < rollEm.length; i++) {
-        //     rollEm[i] = rollGenerator.nextInt(6) + 1;
-        // }
-        // System.out.println("longestRun test: \n\n" + longestRun(rollEm));
+        //TEST: longestRun method
+        final int DIE_TOSSES = 20;
+        Random rollGenerator = new Random();
+        int[] rollEm = new int[DIE_TOSSES];
+        for (int i = 0; i < rollEm.length; i++) {
+            rollEm[i] = rollGenerator.nextInt(6) + 1;
+        }
+        System.out.println("longestRun test: \n\n" + longestRun(rollEm));
 
-        // // TEST: bulgarianSolitaire
-        // ArrayList<Integer> testBulSol = new ArrayList<Integer>(Arrays.asList(20,5,1,9,10)); 
-        // System.out.println("\nbulgarianSolitaire test: \n");
-        // bulgarianSolitaire(testBulSol);
+        // TEST: bulgarianSolitaire
+        ArrayList<Integer> testBulSol = new ArrayList<Integer>(Arrays.asList(20,5,1,9,10)); 
+        System.out.println("\nbulgarianSolitaire test: \n");
+        bulgarianSolitaire(testBulSol);
 
         // TEST: Matrix class
+
+        // Enter number of rows and columns wanted
         Scanner in = new Scanner(System.in);
-        // System.out.println("Enter number of rows in matrix: ");
-        // int mRows = in.nextInt();
-        // System.out.println("Enter number of cols in matrix: ");
-        // int mCols = in.nextInt();
+        System.out.println("Enter number of rows in matrix: ");
+        int mRows = in.nextInt();
+        System.out.println("Enter number of cols in matrix: ");
+        int mCols = in.nextInt();
 
-        int mRows = 4;
-        int mCols = 4;
+        // Initialize matrix with 2D boolean arr of inputed size        
+        boolean[][] testInitArr = new boolean[mRows][mCols];
 
-        boolean[][] test = new boolean[mRows][mCols];
-        // System.out.println("Change values in matrix to true as needed. Enter any non-int value to");
-        // while (in.hasNextInt()) {
-        //     System.out.println("Enter index row location to change to true: ");
-        //     int changeRows = in.nextInt();
-        //     System.out.println("Enter index row location to change to true: ");
-        //     int changeCols = in.nextInt();
-        //     test[changeRows][changeCols] = true;
-        // }
+        // User enters row/col index locations to change values to true
+        boolean checkIfDone = false;
 
-        test[1][1] = true;
-        for (int i = 0; i < test.length; i++) {
-            for (int j = 0; j < test[0].length; j++) {
-                System.out.print(test[i][j] + " ");
+        System.out.println("Change values in matrix to true as needed."
+                            + "\nEnter any non-int value to exit");
+        while (checkIfDone == false) {
+            System.out.println("Enter index row location to change to true: ");
+            if (in.hasNextInt() == false) {
+                checkIfDone = true;
+                break;
             }
-            System.out.println();
+            int changeRows = in.nextInt();
+            
+            System.out.println("Enter index column location to change to true: ");
+            if (in.hasNextInt() == false) {
+                checkIfDone = true;
+                break;
+            }
+            int changeCols = in.nextInt();
+            testInitArr[changeRows][changeCols] = true;
+            System.out.println("Value at " + changeRows + "," + changeCols + " set to true...\n");
         }
+        in.close();
+        // Test functionality on Matrix based on user input
+        Matrix testMatrix = new Matrix(testInitArr);
+        System.out.println("Test .toString(): \n" 
+                            + testMatrix.toString());
+        // System.out.println("Test .transposeMatrix: \n" 
+        //                     + testMatrix.transposeMatrix().toString());
+        // System.out.println("Test .rotateClockwise: \n" 
+        //                     + testMatrix.rotateClockwise().toString());
+        // System.out.println("Test .rotateCounterClockwise: \n"
+        //                     + testMatrix.rotateCounterClockwise().toString());
+        // System.out.println("Test .percentageTrue: \n"
+        //                     + testMatrix.percentageTrue());
 
-        Matrix testMatrix = new Matrix(test);
-        
-        System.out.println("Test .toString(): \n" + testMatrix.toString());
+        // boolean[][] testCompArr = {
+        //         {true,true,true,true},
+        //         {false,true,false,true},
+        //         {false,true,true,true},
+        //         {true,true,false,true}
+        //     };
+        // Matrix comparisonMatrix = new Matrix(testCompArr);
+        // System.out.println("Test .isEqual: \n" + testMatrix.isEqual(comparisonMatrix));
+
+        // STATIC TESTS (No input needed) based on test arrays given in Lab5.pdf
+
+        // TEST: toString method
+        // boolean[][] test = new boolean[4][4];
+        // test[1][1] = true;
+        // Matrix testMatrix2 = new Matrix(test);
+        // System.out.println("Test .toString(): \n" + testMatrix2.toString());
 
         // TEST: .transposeMatrix method
         boolean[][] testTrans = {
@@ -124,7 +163,38 @@ public class Lab5Exercises {
                             + testPerTrue.percentageTrue());
 
         // TEST: isEqual method
-        
+        boolean[][] testEqualA = {
+            {true,true,true,true},
+            {true,true,false,false},
+            {true,true,true,true}
+        };
+        boolean[][] testEqualB = {
+            {true,true,true,true},
+            {true,true,false,false},
+            {true,true,true,true}
+        };
+        boolean[][] testEqualC = {
+            {false,true,true,true},
+            {true,true,false,false},
+            {false,true,true,true}
+        };
+        boolean[][] testEqualD = {
+            {true,true,true},
+            {true,true,false},
+            {true,true,true},
+            {true,true,true}
+        };
+
+        Matrix testEqual0 = new Matrix(testEqualA);
+        Matrix testEqual1 = new Matrix(testEqualB);
+        Matrix testEqual2 = new Matrix(testEqualC);
+        Matrix testEqual3 = new Matrix(testEqualD);
+
+        System.out.println("Test: .isEqual: \n"
+                            + testEqual0.isEqual(testEqual1) + "\n"
+                            + testEqual0.isEqual(testEqual2) + "\n"
+                            + testEqual0.isEqual(testEqual3));
+
     }
 
     /**
