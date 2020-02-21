@@ -1,0 +1,15 @@
+class something
+    main method
+        Alarms a = new Alarm
+        Stopwatch s = new Stopwatch
+        Timer t = new Timer
+
+class Alarms
+    setAlarm
+    deleteAlarm
+    alarmSound
+
+
+class Stopwatch
+
+class Timer
