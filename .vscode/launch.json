@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CheckBoard",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab6.CheckBoard",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Audi",
             "request": "launch",
             "mainClass": "LabsMaven.Lab4.Audi",

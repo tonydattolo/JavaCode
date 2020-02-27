@@ -12,23 +12,23 @@
 //               
 //////////////////////////////////////////////////////////////////////////////////
 
-package LabsMaven.Lab5;
+package LabsMaven.Lab6;
 
 /**
- * scrap
+ * GameOfLifeTester class for GameOfLife.java functionality
  */
-public class scrap {
+public class GameOfLifeTester {
 
     public static void main(String[] args) {
+        boolean[][] test0 = {
+            {false,false,false,false},
+            {false,true,true,false},
+            {false,true,true,false},
+            {false,false,false,false},
+        };
 
-        int size = 8;
-
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                
-            }
-        }
-        
-
+        GameOfLife g1 = new GameOfLife(test0);
+        System.out.println(g1.toString());
+        g1.grow(100, 5);
     }
 }
