@@ -62,6 +62,14 @@ public class GameOfLife {
 	}
 
 	public void grow(int generation, int freqPrint) {
+		
+		boolean[][] deepCopyBoard = new boolean[NUMROW][NUMCOL];
+		for (int i = 0; i < NUMROW; i++) {
+			for (int j = 0; j < NUMCOL; j++) {
+				deepCopyBoard[i][j] = this.board[i][j];
+			}
+		}
+		
 		int generationCounter = 0;
 		
 		// Continue to grow until the number of wanted generations is reached
@@ -69,7 +77,20 @@ public class GameOfLife {
 
 			// Print board at the requested frequency of generations
 			if (generationCounter % freqPrint == 0) {
-				this.board.toString();
+				
+				String boardPrinter = "";
+
+				for (int i = 0; i < NUMROW; i++) {
+					for (int j = 0; j < NUMCOL; j++) {
+						if (deepCopyBoard[i][j] == true) {
+							boardPrinter += "o" + " ";
+						} else {
+							boardPrinter += "+" + " ";
+						}
+					}
+					boardPrinter += "\n";
+				}
+				System.out.println(boardPrinter);
 				System.out.println("=================");
 			}
 
@@ -83,14 +104,15 @@ public class GameOfLife {
 					neighborCount = checkNeighbor(i, j);
 
 					if (neighborCount == 3) {
-						board[i][j] = true;
-					} else if (neighborCount == 2 && board[i][j] == true) {
-						continue;
+						deepCopyBoard[i][j] = true;
+					} else if (neighborCount == 2 && this.board[i][j] == true) {
+						deepCopyBoard[i][j] = true;
 					} else if (neighborCount == 1 || neighborCount == 0 || neighborCount > 3) {
-						board[i][j] = false;
+						deepCopyBoard[i][j] = false;
 					}
 				}
 			}
+			this.board = deepCopyBoard;
 			generationCounter++;
 		}
 	}
@@ -103,15 +125,20 @@ public class GameOfLife {
 		int checkCount = 0;
 		for (int i = -1; i < 2; i++) {
 			for (int j = -1; j < 2; j++) {
+				if (i == 0 && j == 0) {
+					continue;
+				}
 				try {
-					if (board[x+i][y+j] == true) {
+					if (this.board[x+i][y+j] == true) {
 						checkCount++;
 					}
 				} catch (IndexOutOfBoundsException e) {
 					continue;
 				}
+			
 			}
 		}
+		System.out.println("x: "+x+" y: "+y+" checkCount: "+checkCount);
 		return checkCount;
 	}
 }

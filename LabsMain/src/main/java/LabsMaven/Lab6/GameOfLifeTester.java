@@ -20,15 +20,70 @@ package LabsMaven.Lab6;
 public class GameOfLifeTester {
 
     public static void main(String[] args) {
-        boolean[][] test0 = {
+        boolean[][] stillLife1 = {
             {false,false,false,false},
             {false,true,true,false},
             {false,true,true,false},
-            {false,false,false,false},
+            {false,false,false,false}
+        };
+        boolean[][] stillLife2 = {
+            {false,false,false,false,false},
+            {false,true,true,false,false},
+            {false,true,false,true,false},
+            {false,false,true,false,false},
+            {false,false,false,false,false}
+        };
+        boolean[][] stillLife3 = {
+            {false,false,false,false,false,false},
+            {false,false,true,true,false,false},
+            {false,true,false,false,true,false},
+            {false,false,true,false,true,false},
+            {false,false,false,true,false,false},
+            {false,false,false,false,false,false}
+        };
+        boolean[][] stillLife4 = {
+            {false,false,false,false,false,false},
+            {false,false,true,true,false,false},
+            {false,true,false,false,true,false},
+            {false,false,true,true,false,false},
+            {false,false,false,false,false,false}
+        };
+        boolean[][] oscillator1 = {
+            {false,false,false,false,false},
+            {false,false,false,false,false},
+            {false,true,true,true,false},
+            {false,false,false,false,false},
+            {false,false,false,false,false}
+        };
+        boolean[][] oscillator2 = {
+            {false,false,false,false,false,false},
+            {false,true,true,false,false,false},
+            {false,true,false,false,false,false},
+            {false,false,false,false,true,false},
+            {false,false,false,true,true,false},
+            {false,false,false,false,false,false}
         };
 
-        GameOfLife g1 = new GameOfLife(test0);
-        System.out.println(g1.toString());
-        g1.grow(100, 5);
+        // System.out.println("Still Life 1 test");
+        // GameOfLife g1 = new GameOfLife(stillLife1);
+        // g1.grow(100, 20);
+        // System.out.println("Still Life 2 test");
+        // GameOfLife g2 = new GameOfLife(stillLife2);
+        // g2.grow(100, 20);
+        // System.out.println("Still Life 3 test");
+        // GameOfLife g3 = new GameOfLife(stillLife3);
+        // g3.grow(100, 20);
+        // System.out.println("Still Life 4 test");
+        // GameOfLife g4 = new GameOfLife(stillLife4);
+        // g4.grow(100, 20);
+
+        // System.out.println("Oscillator 1 test");
+        // GameOfLife g5 = new GameOfLife(oscillator1);
+        // g5.grow(5, 1);
+
+        System.out.println("Oscillator 1 test");
+        GameOfLife g6 = new GameOfLife(oscillator2);
+        g6.grow(20, 1);
+
     }
 }

@@ -15,16 +15,21 @@
 package LabsMaven.Lab6;
 
 import javax.swing.JFrame;
+import java.util.Scanner;
 import javax.swing.JComponent;
 
 public class CheckBoard extends JComponent {
 
     public static void main(String[] args) {
 
-        printCheckBoard(100);
-        // printCheckBoard(50);
-        // printCheckBoard(25);
-        
+        Scanner in = new Scanner(System.in);
+        System.out.println("Please enter the size of your checkerboard: ");
+        int testCB = in.nextInt();
+        printCheckBoard(testCB);
+        System.out.println("Please enter the size of your checkerboard: ");
+        int testCB2 = in.nextInt();
+        printCheckBoard(testCB2);
+        in.close();
         
     }
 
@@ -35,8 +40,6 @@ public class CheckBoard extends JComponent {
 
         // Set initial JFrame values
         display.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // display.setSize(length*8,width*8);
-        // display.setVisible(true);
         display.setUndecorated(true);
         display.setSize(n*8,n*8);
         display.setVisible(true);
