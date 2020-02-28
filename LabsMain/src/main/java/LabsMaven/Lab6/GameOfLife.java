@@ -5,7 +5,7 @@
 //
 //  Lab 6
 //  @Author  Tony Dattolo, tdattolo
-//  Last Edited:  2/21/2020
+//  Last Edited:  2/27/2020
 //
 //
 //  Directions: Implement assigned methods and testing as described in Lab6.pdf
@@ -14,6 +14,9 @@
 
 package LabsMaven.Lab6;
 
+/**
+ * Conway's Game of Life class implementation.
+ */
 public class GameOfLife {
 
 	private boolean[][] board;
@@ -61,6 +64,11 @@ public class GameOfLife {
 
 	}
 
+	/**
+	 * Computes the next iteration of conway's game of life on the GameOfLife instance
+	 * @param generation the number of wanted generations
+	 * @param freqPrint how often to print based on generations
+	 */
 	public void grow(int generation, int freqPrint) {
 		
 		boolean[][] deepCopyBoard = new boolean[NUMROW][NUMCOL];
@@ -103,22 +111,33 @@ public class GameOfLife {
 				for (int j = 0; j < NUMCOL; j++) {
 					neighborCount = checkNeighbor(i, j);
 
-					if (neighborCount == 3) {
-						deepCopyBoard[i][j] = true;
-					} else if (neighborCount == 2 && this.board[i][j] == true) {
-						deepCopyBoard[i][j] = true;
-					} else if (neighborCount == 1 || neighborCount == 0 || neighborCount > 3) {
+					if (this.board[i][j] == true && (neighborCount == 0 || neighborCount == 1)) {
 						deepCopyBoard[i][j] = false;
+					} else if (this.board[i][j] == true && neighborCount == 2) {
+						deepCopyBoard[i][j] = true;
+					} else if (this.board[i][j] == true && neighborCount >= 4) {
+						deepCopyBoard[i][j] = false;
+					} else if (this.board[i][j] == false && neighborCount == 3) {
+						deepCopyBoard[i][j] = true;
+					} else {
+						continue;
 					}
 				}
 			}
-			this.board = deepCopyBoard;
+
+			// Copy results of this iteration to board for use in next iteration
+			for (int i = 0; i < NUMROW; i++) {
+				for (int j = 0; j < NUMCOL; j++) {
+					this.board[i][j] = deepCopyBoard[i][j];
+				}
+			}
 			generationCounter++;
 		}
 	}
 
 	/**
-	 * Check the surrounding neighbors in the array as described in the book 7.6.3 page 338
+	 * Check the surrounding neighbors in the array as described in the book 7.6.3 page 338.
+	 * Accounts for edge cases by catching index bounds exceptions.
 	 * @return the number of neighbors
 	 */
 	private int checkNeighbor(int x, int y) {
@@ -138,7 +157,7 @@ public class GameOfLife {
 			
 			}
 		}
-		System.out.println("x: "+x+" y: "+y+" checkCount: "+checkCount);
+		// System.out.println("x: "+x+" y: "+y+" checkCount: "+checkCount); // for debugging
 		return checkCount;
 	}
 }
