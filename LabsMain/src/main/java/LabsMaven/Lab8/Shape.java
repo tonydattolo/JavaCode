@@ -16,6 +16,7 @@ package LabsMaven.Lab8;
 
 import java.awt.*;
 
+
 /**
  * Shape class for use in subclasses as described in Lab8.pdf
  */
@@ -24,7 +25,7 @@ abstract class Shape {
     private Color fillColor;
     private Color borderColor;
     private Boolean isFilled;
-    private Point location;
+    private Point location = new Point(0,0);
 
     /**
      * Constructor method for Shape class and subclasses.
@@ -36,7 +37,8 @@ abstract class Shape {
      */
     public Shape(Color fillColor, Color borderColor, int x, int y) {
         this.fillColor = fillColor;
-        this.location.setLocation(x, y);
+        this.location = new Point(x, y);
+        //this.location.setLocation(x, y);
         this.borderColor = borderColor;
     }
 

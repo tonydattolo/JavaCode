@@ -6,11 +6,15 @@
 //  @Author  
 //  Explain: What does this class do?
 ///////////////////////////////////////////////////////////////////////////////////
+package LabsMaven.Lab8;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.Timer;
+import java.awt.*;
+import java.awt.event.ActionListener;
 
-import java.awt.BorderLayout;
+
 
 /*
  * Main application for random shape generator app
@@ -20,11 +24,16 @@ import java.awt.BorderLayout;
  */
 public class ShapeWindow extends JFrame {
 
-    JPanel shapeDriver;
+    
+
+	private int timerDelay = 100; //milliseconds
+	JPanel shapeDriver;
 
     public ShapeWindow() {
         super();
-        // TO-DO: set up the frame
+		// TO-DO: set up the frame
+		
+
 		/*
 		Create a ShapeDriver object here (which is a JPanel)
 		and add it to ShapeWindow (which is a JFrame). Don't forget to setSize,
@@ -39,10 +48,47 @@ public class ShapeWindow extends JFrame {
 		You can stop your timer object after the try-catch block
 		
 		*/
+
+		// JFrame frame = new JFrame();
+		
+		// JPanel shapeDriver = new ShapeDriver();
+		// // this.setContentPane(shapeDriver);
+		// this.getContentPane().add(shapeDriver);
+		// // this.setContentPane(shapeDriver);
+		// this.setTitle("Shapes");
+		// this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// this.setSize(shapeDriver.getHeight(),shapeDriver.getWidth());
+		// this.setVisible(true);
+
+
+		// Timer delayDrawing = new Timer(100, (ActionListener) shapeDriver);
+		// delayDrawing.start();
+		// //this.add(shapeDriver);
+		// try {
+		// 	Thread.sleep(20000);			
+		// } catch (Exception e) {
+		// 	System.out.println("error");
+		// }
+		// delayDrawing.stop();
+
+
+		shapeDriver = new ShapeDriver();
+		this.setSize(600, 600);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.add(shapeDriver);
+		Timer t = new Timer(1000, (ActionListener) shapeDriver);
+		t.start();
+
     }
 
     public static void main(String[] args) {
         // Create a JFrame and invoke the constructor
-        JFrame shapeWindow = new ShapeWindow();
+		JFrame shapeWindow = new ShapeWindow();
+		
     }
+
+	public int getTimerDelay() {
+		return timerDelay;
+	}
 }
