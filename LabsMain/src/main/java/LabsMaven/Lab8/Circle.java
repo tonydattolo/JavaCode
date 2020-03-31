@@ -8,15 +8,9 @@ import java.awt.Graphics;
  */
 public class Circle extends Oval {
 
-    int x, y;
-    Color fill, border;
 
     public Circle(Color fillColor, Color borderColor, int x, int y) {
         super(fillColor, borderColor, x, y);
-        this.x = x;
-        this.y = y;
-        this.fill = fillColor;
-        this.border = borderColor;
         // TODO Auto-generated constructor stub
     }
 
@@ -29,12 +23,19 @@ public class Circle extends Oval {
     }
 
     @Override
+    public String toString() {
+    // TODO Auto-generated method stub
+    
+        return "Shape Type: Circle @ " + "X: " + super.getX() + "Y: " + super.getY();
+    }
+
+    @Override
     void draw(Graphics g) {
         // TODO Auto-generated method stub
         g.setColor(getBorderColor());
-        g.drawOval(this.getX(), this.getY(), 20, 20);
+        g.drawOval(this.getX(), this.getY(), super.getMajorRadius(), super.getMajorRadius());
         g.setColor(getFillColor());
-        g.fillOval(this.getX(), this.getY(), 20, 20);
+        g.fillOval(this.getX(), this.getY(), super.getMajorRadius(), super.getMajorRadius());
     }
 
     

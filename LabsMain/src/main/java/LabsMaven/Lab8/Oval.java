@@ -11,7 +11,7 @@ public class Oval extends Shape {
 
     private int minorRadius; // height
     private int majorRadius; // width
-    Random rn = new Random(50);
+    Random rn = new Random();
 
     public Oval(Color fillColor, Color borderColor, int x, int y) {
         super(fillColor, borderColor, x, y);
@@ -59,7 +59,7 @@ public class Oval extends Shape {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "X: " + this.getX() + ", Y: " + this.getY() + "\n";
+        return "Shape Type: Oval @ " + "X: " + super.getX() + ", Y: " + super.getY() + "\n";
     }
 
     @Override
