@@ -99,13 +99,13 @@ public class ShapeDriver extends JPanel implements ActionListener {
 
 
 
-    int randomShape = rn.nextInt(5);
+    int randomShape = rn.nextInt(6);
     switch (randomShape) {
       case 0:
         if (ovalCount < 10) {
           Oval randomOval = new Oval(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomOval);
-          // print
+          System.out.println(randomOval);
           ovalCount++;
           break;
         } else {
@@ -136,7 +136,7 @@ public class ShapeDriver extends JPanel implements ActionListener {
         if (rectCount < 10) {
           Rectangle randomRect = new Rectangle(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomRect);
-          //print
+          // System.out.println(randomRect);
           rectCount++;
           break;
         } else {

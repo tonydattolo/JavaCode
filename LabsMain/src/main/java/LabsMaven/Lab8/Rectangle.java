@@ -31,7 +31,7 @@ public class Rectangle extends Quadrilateral {
         this.yPoints[1] = y;
         this.yPoints[2] = y + length;
         this.yPoints[3] = y + length;
-        
+        this.nPoints = 4;
     }
 
     public Rectangle(Color fillColor, int x, int y) {
