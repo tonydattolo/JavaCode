@@ -4,7 +4,8 @@
 //
 // Lab8
 // @Author
-// Explain: What does this class do?
+// Explain: Determines which shapes to add to ShapeWindow class. Randomly selects
+//          colors, locations, etc.
 ///////////////////////////////////////////////////////////////////////////////////
 package LabsMaven.Lab8;
 
@@ -20,6 +21,7 @@ import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.*;
 import java.awt.event.*;
+import LabsMaven.Lab8.Shape;
 
 
 /*
@@ -56,7 +58,7 @@ public class ShapeDriver extends JPanel implements ActionListener {
      * TO-DO: - set up this JPanel - initialize any other fields you've declared - You could also
      * setBackground here
      */
-    this.setBackground(new Color(rn.nextInt(256),rn.nextInt(256),rn.nextInt(256)));
+    this.setBackground(new Color(rn.nextInt(256), rn.nextInt(256), rn.nextInt(256)));
     this.randomShapesDynamic = new ArrayList<>();
     this.setVisible(true);
     this.setSize(600, 600);
@@ -93,8 +95,8 @@ public class ShapeDriver extends JPanel implements ActionListener {
      * 
      * Remember, a specific type of shape (Square, Oval etc) can be repeated only 10 times max.
      */
-    
-    
+
+
     // System.out.println("in actionPerformed"); // debugging
     Color randomFillColor = new Color(rn.nextInt(256), rn.nextInt(256), rn.nextInt(256));
     Color randomBorderColor = new Color(rn.nextInt(256), rn.nextInt(256), rn.nextInt(256));
@@ -138,13 +140,14 @@ public class ShapeDriver extends JPanel implements ActionListener {
         }
       case 3:
         if (rectCount < 10) {
-          Rectangle randomRect = new Rectangle(randomFillColor, randomBorderColor, randomX, randomY);
+          Rectangle randomRect =
+              new Rectangle(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomRect);
           System.out.println(randomRect);
           rectCount++;
           break;
         } else {
-          break;          
+          break;
         }
       case 4:
         if (squareCount < 10) {
@@ -158,7 +161,8 @@ public class ShapeDriver extends JPanel implements ActionListener {
         }
       case 5:
         if (triangleCount < 10) {
-          Triangle randomTriangle = new Triangle(randomFillColor, randomBorderColor, randomX, randomY);
+          Triangle randomTriangle =
+              new Triangle(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomTriangle);
           System.out.println(randomTriangle);
           triangleCount++;
@@ -178,7 +182,8 @@ public class ShapeDriver extends JPanel implements ActionListener {
         }
       case 7:
         if (pentagonCount < 10) {
-          Pentagon randomPentagon = new Pentagon(randomFillColor, randomBorderColor, randomX, randomY);
+          Pentagon randomPentagon =
+              new Pentagon(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomPentagon);
           System.out.println(randomPentagon);
           pentagonCount++;
@@ -196,7 +201,7 @@ public class ShapeDriver extends JPanel implements ActionListener {
         } else {
           break;
         }
-      
+
       default:
         break;
     }
@@ -206,20 +211,27 @@ public class ShapeDriver extends JPanel implements ActionListener {
 
   // test client
   public static void main(String[] args) {
-
+    ShapeWindow testSW = new ShapeWindow();
+    // for (int i = 0; i < testSD.randomShapesDynamic.size(); i++) {
+    //   System.out.println(testSD.randomShapesDynamic.get(i).toString());
+    // }
   }
 
   @Override
   public int getHeight() {
-    // TODO Auto-generated method stub
-    // return super.getHeight();
     return this.FRAME_HEIGHT;
   }
 
   @Override
   public int getWidth() {
-    // TODO Auto-generated method stub
-    // return super.getWidth();
     return this.FRAME_WIDTH;
+  }
+
+  public ArrayList<Shape> getRandomShapesDynamic() {
+    return randomShapesDynamic;
+  }
+
+  public void setRandomShapesDynamic(ArrayList<Shape> randomShapesDynamic) {
+    this.randomShapesDynamic = randomShapesDynamic;
   }
 }

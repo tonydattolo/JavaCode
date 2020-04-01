@@ -11,7 +11,6 @@ public class Circle extends Oval {
 
     public Circle(Color fillColor, Color borderColor, int x, int y) {
         super(fillColor, borderColor, x, y);
-        // TODO Auto-generated constructor stub
     }
 
     public Circle(Color fillColor, int x, int y) {
@@ -24,9 +23,8 @@ public class Circle extends Oval {
 
     @Override
     public String toString() {
-    // TODO Auto-generated method stub
-    
-        return "Shape Type: Circle @ " + "X: " + super.getX() + ", Y: " + super.getY();
+        return "Shape Type: Circle @ " + "X: " + super.getX() + ", Y: " + super.getY()
+                + ", FillColor: " + super.getFillColor();
     }
 
     @Override
@@ -38,5 +36,15 @@ public class Circle extends Oval {
         g.fillOval(this.getX(), this.getY(), super.getMajorRadius(), super.getMajorRadius());
     }
 
-    
+    @Override
+    public boolean equals(Object obj) {
+        Circle other = (Circle) obj;
+        if (this.getFillColor() == other.getFillColor()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }

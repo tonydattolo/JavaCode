@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.*;
 import java.util.Random;
+import org.w3c.dom.css.Rect;
 
 /**
  * Rectangle
@@ -12,10 +13,10 @@ public class Rectangle extends Quadrilateral {
 
     Random rn = new Random();
 
-    private int[] xPoints = new int[4]; 
+    private int[] xPoints = new int[4];
     private int[] yPoints = new int[4];
     private int nPoints;
-    
+
     int length = rn.nextInt(50);
     int width = rn.nextInt(50);
     // int length = 30;
@@ -70,8 +71,18 @@ public class Rectangle extends Quadrilateral {
 
     @Override
     public String toString() {
-        return "Shape Type: Rectangle @ " + "X: " + super.getX() + ", Y: " + super.getY();
+        return "Shape Type: Rectangle @ " + "X: " + super.getX() + ", Y: " + super.getY()
+                + ", FillColor: " + super.getFillColor();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Rectangle other = (Rectangle) obj;
+        if (this.getFillColor() == other.getFillColor()) {
+            return true;
+        } else {
+            return false;
+        }
 
     }
-    
 }

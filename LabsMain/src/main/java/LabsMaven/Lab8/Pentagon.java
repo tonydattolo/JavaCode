@@ -13,10 +13,10 @@ public class Pentagon extends Polygon {
     private int[] xPoints = new int[nPoints];
     private int[] yPoints = new int[nPoints];
     private int radius = 5 + rn.nextInt(25);
-    
+
     public Pentagon(Color fillColor, Color borderColor, int x, int y) {
         super(fillColor, borderColor, x, y);
-        
+
     }
 
     public Pentagon(Color fillColor, int x, int y) {
@@ -25,7 +25,7 @@ public class Pentagon extends Polygon {
 
     public Pentagon(int x, int y) {
         super(x, y);
-        
+
     }
 
     @Override
@@ -38,7 +38,19 @@ public class Pentagon extends Polygon {
 
     @Override
     public String toString() {
-        return "Shape Type: Pentagon @ X: " + super.getX() + ", Y:" + super.getY();
+        return "Shape Type: Pentagon @ X: " + super.getX() + ", Y: " + super.getY() + ", FillColor: "
+                + super.getFillColor();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Pentagon other = (Pentagon) obj;
+        if (this.getFillColor() == other.getFillColor()) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     public int getRadius() {

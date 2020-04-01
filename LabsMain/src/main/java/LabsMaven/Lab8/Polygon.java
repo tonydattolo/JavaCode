@@ -25,10 +25,22 @@ public class Polygon extends Shape {
 
     public Polygon(Color fillColor, int x, int y) {
         super(fillColor, x, y);
+        this.xPoints[0] = x;
+        this.yPoints[0] = y;
+        for (int i = 1; i < this.nPoints; i++) {
+            this.xPoints[i] = x + rn.nextInt(25);
+            this.yPoints[i] = y + rn.nextInt(25);
+        }
     }
 
     public Polygon(int x, int y) {
         super(x, y);
+        this.xPoints[0] = x;
+        this.yPoints[0] = y;
+        for (int i = 1; i < this.nPoints; i++) {
+            this.xPoints[i] = x + rn.nextInt(25);
+            this.yPoints[i] = y + rn.nextInt(25);
+        }
     }
 
     @Override

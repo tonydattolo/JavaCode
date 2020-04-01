@@ -4,8 +4,12 @@
 //
 // Lab8
 // @Author
-// Explain: What does this class do?
+// Explain: Creates a window and calls the ShapeDriver class to populate it with
+// shapes of random colors, sides, etc. Has a timer to determine when
+// to populate and when to stop. Every 100 miliseconds for 20 seconds
+// or until max number of shapes is reached (10 each)
 ///////////////////////////////////////////////////////////////////////////////////
+
 package LabsMaven.Lab8;
 
 import javax.swing.JFrame;
@@ -15,12 +19,12 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 
-
-/*
- * Main application for random shape generator app NOTE: You are encouraged to experiment and try
- * out various approaches The comments given here are just guidelines to get you started Possibly,
- * this problem can be completed in many ways.
+/**
+ * Creates a window and calls the ShapeDriver class to populate it with shapes of random colors,
+ * sides, etc. Has a timer to determine when to populate and when to stop. Every 100 miliseconds for
+ * 20 seconds or until max number of shapes is reached (10 each)
  */
+
 public class ShapeWindow extends JFrame {
 
 

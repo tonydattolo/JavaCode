@@ -12,7 +12,7 @@ public class Quadrilateral extends Shape {
 
     Random rn = new Random();
 
-    private int[] xPoints = new int[4]; 
+    private int[] xPoints = new int[4];
     private int[] yPoints = new int[4];
     private int nPoints;
 
@@ -26,7 +26,7 @@ public class Quadrilateral extends Shape {
         this.yPoints[1] = y - rn.nextInt(20);
         this.yPoints[2] = y + rn.nextInt(20);
         this.yPoints[3] = y + rn.nextInt(20);
-        this.nPoints = 4; 
+        this.nPoints = 4;
     }
 
     public Quadrilateral(Color fillColor, int x, int y) {
@@ -39,7 +39,7 @@ public class Quadrilateral extends Shape {
         this.yPoints[1] = y - rn.nextInt(20);
         this.yPoints[2] = y + rn.nextInt(20);
         this.yPoints[3] = y + rn.nextInt(20);
-        this.nPoints = 4; 
+        this.nPoints = 4;
     }
 
     public Quadrilateral(int x, int y) {
@@ -52,9 +52,9 @@ public class Quadrilateral extends Shape {
         this.yPoints[1] = y - rn.nextInt(20);
         this.yPoints[2] = y + rn.nextInt(20);
         this.yPoints[3] = y + rn.nextInt(20);
-        this.nPoints = 4; 
+        this.nPoints = 4;
     }
-    
+
     @Override
     void draw(Graphics g) {
         // TODO Auto-generated method stub
@@ -66,8 +66,17 @@ public class Quadrilateral extends Shape {
 
     @Override
     public String toString() {
-        return "Shape Type: Quadrilateral @ " + "X: " + super.getX() + ", Y: " + super.getY();
-    
+        return "Shape Type: Quadrilateral @ " + "X: " + super.getX() + ", Y: " + super.getY()
+                + ", FillColor: " + super.getFillColor();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Quadrilateral other = (Quadrilateral) obj;
+        if (this.getFillColor() == other.getFillColor()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

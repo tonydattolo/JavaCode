@@ -34,7 +34,18 @@ public class Square extends Rectangle {
 
     @Override
     public String toString() {
-        return "Shape Type: Square @ " + "X: " + super.getX() + ", Y: " + super.getY();
+        return "Shape Type: Square @ " + "X: " + super.getX() + ", Y: " + super.getY()
+                + ", FillColor: " + super.getFillColor();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        Square other = (Square) obj;
+        if (this.getFillColor() == other.getFillColor()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

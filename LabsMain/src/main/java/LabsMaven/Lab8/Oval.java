@@ -18,7 +18,7 @@ public class Oval extends Shape {
         this.minorRadius = rn.nextInt(30);
         this.majorRadius = rn.nextInt(30);
     }
-    
+
     public Oval(Color fillColor, int x, int y) {
         super(fillColor, x, y);
         this.minorRadius = rn.nextInt(30);
@@ -33,16 +33,17 @@ public class Oval extends Shape {
 
     @Override
     void draw(Graphics g) {
-        g.setColor(this.getFillColor()); //access fill color use getter
+        g.setColor(this.getFillColor()); // access fill color use getter
         g.fillOval(this.getX(), this.getY(), this.majorRadius, this.minorRadius);
-        g.setColor(this.getBorderColor()); //access border color getter
+        g.setColor(this.getBorderColor()); // access border color getter
         g.drawOval(this.getX(), this.getY(), this.majorRadius, this.minorRadius);
     }
 
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "Shape Type: Oval @ " + "X: " + super.getX() + ", Y: " + super.getY() + ", FillColor: " + super.getFillColor();
+        return "Shape Type: Oval @ " + "X: " + super.getX() + ", Y: " + super.getY()
+                + ", FillColor: " + super.getFillColor();
     }
 
     @Override
@@ -53,7 +54,7 @@ public class Oval extends Shape {
         } else {
             return false;
         }
-    
+
     }
 
     public int getMinorRadius() {
@@ -71,5 +72,5 @@ public class Oval extends Shape {
     public void setMajorRadius(int majorRadius) {
         this.majorRadius = majorRadius;
     }
-    
+
 }

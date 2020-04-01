@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ShapeDriver",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab8.ShapeDriver",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CheckBoard",
             "request": "launch",
             "mainClass": "LabsMaven.Lab6.CheckBoard",

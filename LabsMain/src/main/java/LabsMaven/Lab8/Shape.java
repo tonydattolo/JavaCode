@@ -1,15 +1,15 @@
 ////////////////////////////////////////////////////////////////////////////////////
-//  C212
-//   
-//  Released:  3/4/20
+// C212
 //
-//  Lab 8
-//  @Author  Tony Dattolo, tdattolo
-//  Last Edited:  3/6/2020
+// Released: 3/4/20
+//
+// Lab 8
+// @Author Tony Dattolo, tdattolo
+// Last Edited: 3/6/2020
 //
 //
-//  Directions: Implement assigned methods and testing as described in Lab8.pdf
-//               
+// Directions: Implement assigned methods and testing as described in Lab8.pdf
+//
 ////////////////////////////////////////////////////////////////////////////////////
 
 package LabsMaven.Lab8;
@@ -25,30 +25,32 @@ abstract class Shape {
     private Color fillColor;
     private Color borderColor;
     private Boolean isFilled;
-    private Point location = new Point(0,0);
+    private Point location = new Point(0, 0);
 
     /**
-     * Constructor method for Shape class and subclasses.
-     * Sets the location to place the shape, its color, and its border.
-     * @param fillColor the color to fill the shape with
+     * Constructor method for Shape class and subclasses. Sets the location to place the shape, its
+     * color, and its border.
+     * 
+     * @param fillColor   the color to fill the shape with
      * @param borderColor the color to set the border to
-     * @param x x coordinate value
-     * @param y y coordinate value
+     * @param x           x coordinate value
+     * @param y           y coordinate value
      */
     public Shape(Color fillColor, Color borderColor, int x, int y) {
         this.fillColor = fillColor;
         this.location = new Point(x, y);
-        //this.location.setLocation(x, y);
+        // this.location.setLocation(x, y);
         this.borderColor = borderColor;
     }
 
-    //set borderColor to Black since not provided
+    // set borderColor to Black since not provided
     /**
-     * Constructor method for Shape class and subclasses, with default Black border color
-     * Sets the location to place the shape and its fill color
+     * Constructor method for Shape class and subclasses, with default Black border color Sets the
+     * location to place the shape and its fill color
+     * 
      * @param fillColor the color to fill the shape with
-     * @param x x coordinate value
-     * @param y y coordniate value
+     * @param x         x coordinate value
+     * @param y         y coordniate value
      */
     public Shape(Color fillColor, int x, int y) {
         this.fillColor = fillColor;
@@ -57,8 +59,9 @@ abstract class Shape {
     }
 
     /**
-     * Constuctor method for Shape class and subclasses.
-     * Fill color defaulted to white, border color defaulted to black
+     * Constuctor method for Shape class and subclasses. Fill color defaulted to white, border color
+     * defaulted to black
+     * 
      * @param x x coordinate value
      * @param y y coordniate value
      */
@@ -116,7 +119,7 @@ abstract class Shape {
         this.location.y = y;
     }
 
-//IGNORE TIL LAB 9
+    // IGNORE TIL LAB 9
 
     // // if fillColor is white, returns true, else returns false
     // public boolean isFilled() {
