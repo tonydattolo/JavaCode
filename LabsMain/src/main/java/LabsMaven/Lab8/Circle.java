@@ -26,7 +26,7 @@ public class Circle extends Oval {
     public String toString() {
     // TODO Auto-generated method stub
     
-        return "Shape Type: Circle @ " + "X: " + super.getX() + "Y: " + super.getY();
+        return "Shape Type: Circle @ " + "X: " + super.getX() + ", Y: " + super.getY();
     }
 
     @Override

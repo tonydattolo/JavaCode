@@ -34,7 +34,7 @@ public class Square extends Rectangle {
 
     @Override
     public String toString() {
-        return "Shape Type: Square @ " + "X: " + super.getX() + "Y: " + super.getY();
+        return "Shape Type: Square @ " + "X: " + super.getX() + ", Y: " + super.getY();
     }
     
 }

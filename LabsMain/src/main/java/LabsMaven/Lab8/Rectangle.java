@@ -70,7 +70,7 @@ public class Rectangle extends Quadrilateral {
 
     @Override
     public String toString() {
-        return "Shape Type: Rectangle @ " + "X: " + super.getX() + "Y: " + super.getY();
+        return "Shape Type: Rectangle @ " + "X: " + super.getX() + ", Y: " + super.getY();
 
     }
     

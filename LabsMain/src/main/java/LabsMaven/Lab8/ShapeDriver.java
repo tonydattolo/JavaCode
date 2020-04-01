@@ -45,6 +45,9 @@ public class ShapeDriver extends JPanel implements ActionListener {
   int rectCount = 0;
   int squareCount = 0;
   int triangleCount = 0;
+  int polygonCount = 0;
+  int pentagonCount = 0;
+  int hexagonCount = 0;
 
   public ShapeDriver() {
 
@@ -53,6 +56,7 @@ public class ShapeDriver extends JPanel implements ActionListener {
      * TO-DO: - set up this JPanel - initialize any other fields you've declared - You could also
      * setBackground here
      */
+    this.setBackground(new Color(rn.nextInt(256),rn.nextInt(256),rn.nextInt(256)));
     this.randomShapesDynamic = new ArrayList<>();
     this.setVisible(true);
     this.setSize(600, 600);
@@ -91,15 +95,15 @@ public class ShapeDriver extends JPanel implements ActionListener {
      */
     
     
-    System.out.println("in actionPerformed");
+    // System.out.println("in actionPerformed"); // debugging
     Color randomFillColor = new Color(rn.nextInt(256), rn.nextInt(256), rn.nextInt(256));
     Color randomBorderColor = new Color(rn.nextInt(256), rn.nextInt(256), rn.nextInt(256));
-    int randomX = rn.nextInt(this.FRAME_WIDTH - 40) + 20;
-    int randomY = rn.nextInt(this.FRAME_HEIGHT - 40) + 20;
+    int randomX = rn.nextInt(this.FRAME_WIDTH - 50) + 20;
+    int randomY = rn.nextInt(this.FRAME_HEIGHT - 50) + 20;
 
 
 
-    int randomShape = rn.nextInt(6);
+    int randomShape = rn.nextInt(9);
     switch (randomShape) {
       case 0:
         if (ovalCount < 10) {
@@ -115,7 +119,7 @@ public class ShapeDriver extends JPanel implements ActionListener {
         if (circleCount < 10) {
           Circle randomCircle = new Circle(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomCircle);
-          // print
+          System.out.println(randomCircle);
           circleCount++;
           break;
         } else {
@@ -126,7 +130,7 @@ public class ShapeDriver extends JPanel implements ActionListener {
           Quadrilateral randomQuad =
               new Quadrilateral(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomQuad);
-          // print
+          System.out.println(randomQuad);
           quadCount++;
           break;
         } else {
@@ -136,7 +140,7 @@ public class ShapeDriver extends JPanel implements ActionListener {
         if (rectCount < 10) {
           Rectangle randomRect = new Rectangle(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomRect);
-          // System.out.println(randomRect);
+          System.out.println(randomRect);
           rectCount++;
           break;
         } else {
@@ -146,7 +150,7 @@ public class ShapeDriver extends JPanel implements ActionListener {
         if (squareCount < 10) {
           Square randomSquare = new Square(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomSquare);
-          // print
+          System.out.println(randomSquare);
           squareCount++;
           break;
         } else {
@@ -156,18 +160,43 @@ public class ShapeDriver extends JPanel implements ActionListener {
         if (triangleCount < 10) {
           Triangle randomTriangle = new Triangle(randomFillColor, randomBorderColor, randomX, randomY);
           this.randomShapesDynamic.add(randomTriangle);
-          //print
+          System.out.println(randomTriangle);
           triangleCount++;
           break;
         } else {
           break;
         }
-        // // // case 3:
-        // // // case 4:
-        // // // case 5:
-        // // // case 6:
-        // // // case 7:
-        // // // case 8:
+      case 6:
+        if (polygonCount < 10) {
+          Polygon randomPolygon = new Polygon(randomFillColor, randomBorderColor, randomX, randomY);
+          this.randomShapesDynamic.add(randomPolygon);
+          System.out.println(randomPolygon);
+          polygonCount++;
+          break;
+        } else {
+          break;
+        }
+      case 7:
+        if (pentagonCount < 10) {
+          Pentagon randomPentagon = new Pentagon(randomFillColor, randomBorderColor, randomX, randomY);
+          this.randomShapesDynamic.add(randomPentagon);
+          System.out.println(randomPentagon);
+          pentagonCount++;
+          break;
+        } else {
+          break;
+        }
+      case 8:
+        if (hexagonCount < 10) {
+          Hexagon randomHexagon = new Hexagon(randomFillColor, randomBorderColor, randomX, randomY);
+          this.randomShapesDynamic.add(randomHexagon);
+          System.out.println(randomHexagon);
+          hexagonCount++;
+          break;
+        } else {
+          break;
+        }
+      
       default:
         break;
     }

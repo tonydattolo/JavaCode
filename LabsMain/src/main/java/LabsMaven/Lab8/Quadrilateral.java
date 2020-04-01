@@ -66,7 +66,7 @@ public class Quadrilateral extends Shape {
 
     @Override
     public String toString() {
-        return "Shape Type: Quadrilateral @ " + "X: " + super.getX() + "Y: " + super.getY();
+        return "Shape Type: Quadrilateral @ " + "X: " + super.getX() + ", Y: " + super.getY();
     
     }
 

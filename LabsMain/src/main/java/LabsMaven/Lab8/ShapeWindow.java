@@ -49,6 +49,7 @@ public class ShapeWindow extends JFrame {
 		 */
 
 		shapeDriver = new ShapeDriver();
+		this.setTitle("Shapes-o-rama!");
 		this.setSize(600, 600);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

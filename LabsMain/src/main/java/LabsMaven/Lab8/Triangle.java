@@ -46,7 +46,7 @@ public class Triangle extends Shape {
 
     @Override
     public String toString() {
-        return "Shape Type: Triangle @ " + "X: " + super.getX() + "Y: " + super.getY();
+        return "Shape Type: Triangle @ " + "X: " + super.getX() + ", Y: " + super.getY();
     }
     
 }
