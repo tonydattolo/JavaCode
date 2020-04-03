@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - VehicleTester",
+            "request": "launch",
+            "mainClass": "LabsMaven.ClassCode.scrap.VehicleTester",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Checker",
+            "request": "launch",
+            "mainClass": "LabsMaven.ClassCode.scrap.Checker",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Child",
+            "request": "launch",
+            "mainClass": "LabsMaven.ClassCode.scrap.Child",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ShapeDriver",
             "request": "launch",
             "mainClass": "LabsMaven.Lab8.ShapeDriver",

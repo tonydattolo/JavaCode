@@ -29,7 +29,7 @@ import LabsMaven.Lab8.Shape;
  * various approaches The comments given here are just guidelines to get you started Possibly, this
  * problem can be finished in many ways.
  */
-public class ShapeDriver extends JPanel implements ActionListener, KeyListener {
+public class ShapeDriver extends JPanel implements ActionListener {
 
   // Panel constants
   public final int FRAME_WIDTH = 600;
@@ -205,9 +205,6 @@ public class ShapeDriver extends JPanel implements ActionListener, KeyListener {
       default:
         break;
     }
-
-
-
     this.repaint();
 
   }
@@ -236,23 +233,5 @@ public class ShapeDriver extends JPanel implements ActionListener, KeyListener {
 
   public void setRandomShapesDynamic(ArrayList<Shape> randomShapesDynamic) {
     this.randomShapesDynamic = randomShapesDynamic;
-  }
-
-  @Override
-  public void keyTyped(KeyEvent e) {
-    // TODO Auto-generated method stub
-
-  }
-
-  @Override
-  public void keyPressed(KeyEvent e) {
-    // TODO Auto-generated method stub
-
-  }
-
-  @Override
-  public void keyReleased(KeyEvent e) {
-    // TODO Auto-generated method stub
-
   }
 }

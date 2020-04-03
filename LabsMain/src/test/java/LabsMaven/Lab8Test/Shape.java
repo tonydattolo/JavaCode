@@ -122,21 +122,17 @@ abstract class Shape {
     // IGNORE TIL LAB 9
 
     // // if fillColor is white, returns true, else returns false
-    public boolean isFilled() {
-        if (this.getFillColor() == Color.WHITE) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // public boolean isFilled() {
 
-    // moves location by dx and dy
-    private void moveLocation(int dx, int dy) {
-        this.translate(dx, dy);
-    }
+    // }
 
-    abstract double getArea();
-    abstract double getPerimeter();
+    // // moves location by dx and dy
+    // private void moveLocation(int dx, int dy) {
+
+    // }
+
+    // abstract double getArea();
+    // abstract double getPerimeter();
 
     // You have to update other methods as described above
 

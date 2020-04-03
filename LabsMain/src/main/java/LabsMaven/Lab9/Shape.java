@@ -12,7 +12,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////
 
-package LabsMaven.Lab8;
+package LabsMaven.Lab9;
 
 import java.awt.*;
 
@@ -39,7 +39,7 @@ abstract class Shape {
     public Shape(Color fillColor, Color borderColor, int x, int y) {
         this.fillColor = fillColor;
         this.location = new Point(x, y);
-        // this.location.setLocation(x, y);
+        this.location.setLocation(x, y);
         this.borderColor = borderColor;
     }
 
@@ -121,22 +121,27 @@ abstract class Shape {
 
     // IGNORE TIL LAB 9
 
-    // // if fillColor is white, returns true, else returns false
+    // if fillColor is white, returns true, else returns false
     public boolean isFilled() {
-        if (this.getFillColor() == Color.WHITE) {
+        if (this.fillColor == Color.WHITE) {
             return true;
         } else {
             return false;
         }
     }
 
-    // moves location by dx and dy
-    private void moveLocation(int dx, int dy) {
-        this.translate(dx, dy);
+    // // moves location by dx and dy
+    public void moveLocation(int dx, int dy) {
+        this.setX(this.getX() + dx);
+        this.setY(this.getY() + dy);
     }
 
     abstract double getArea();
-    abstract double getPerimeter();
+
+    public void setradius() {
+    }
+    
+    // abstract double getPerimeter(); //maybe dont need
 
     // You have to update other methods as described above
 
