@@ -1,0 +1,23 @@
+LabsMain\src\main\java\LabsMaven\Lab10\tinyTale.txt has 60 total words.
+LabsMain\src\main\java\LabsMaven\Lab10\tinyTale.txt has 20 distinct words.
+LabsMain\src\main\java\LabsMaven\Lab10\tinyTale.txt has 5 total lines.
+Word: was, Length: 3, Occurances: 10
+Word: the, Length: 3, Occurances: 10
+Word: it, Length: 2, Occurances: 10
+Word: of, Length: 2, Occurances: 10
+Word: season, Length: 6, Occurances: 2
+Word: epoch, Length: 5, Occurances: 2
+Word: times, Length: 5, Occurances: 2
+Word: age, Length: 3, Occurances: 2
+Word: incredulity, Length: 11, Occurances: 1
+Word: foolishness, Length: 11, Occurances: 1
+Word: darkness, Length: 8, Occurances: 1
+Word: despair, Length: 7, Occurances: 1
+Word: winter, Length: 6, Occurances: 1
+Word: wisdom, Length: 6, Occurances: 1
+Word: spring, Length: 6, Occurances: 1
+Word: belief, Length: 6, Occurances: 1
+Word: light, Length: 5, Occurances: 1
+Word: worst, Length: 5, Occurances: 1
+Word: best, Length: 4, Occurances: 1
+Word: hope, Length: 4, Occurances: 1

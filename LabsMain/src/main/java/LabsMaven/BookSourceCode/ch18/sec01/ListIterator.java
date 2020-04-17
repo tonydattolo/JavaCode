@@ -1,9 +1,10 @@
+package LabsMaven.BookSourceCode.ch18.sec01;
+
 /**
-   A list iterator allows access of a position in a linked list.    
-   This interface contains a subset of the methods of the 
-   standard java.util.ListIterator interface. The methods for
-   backward traversal are not included.
-*/
+ * A list iterator allows access of a position in a linked list. This interface contains a subset of
+ * the methods of the standard java.util.ListIterator interface. The methods for backward traversal
+ * are not included.
+ */
 public interface ListIterator
 {  
    /**

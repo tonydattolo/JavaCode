@@ -1,0 +1,36 @@
+SYNTAX
+
+Type Variable   ||            Meaning
+===================================================
+    E           ||   Element type in a collection
+    K           ||   Key type in a map
+    V           ||   Value type in a map
+    T           ||   General type
+    S, U        ||   Additional general types
+
+
+
+modifier class GenericCLassName<TypeVariable1, TypeVariable2,...> {
+    instance variables
+    constructors
+    methods
+}
+
+public class Pair<T,S> {
+    private T first;
+    private S second;
+
+    public T getFirst() {
+        return first;
+    }
+
+    public static <E> String toString(ArrayList<E> arr) {
+        String result = "";
+
+        for (E e : arr) {
+            result += e + " ";
+        }
+        return result;
+    }
+
+}

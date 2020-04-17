@@ -1,3 +1,5 @@
+package LabsMaven.BookSourceCode.ch18.sec02;
+
 public class PairDemo
 {
    public static void main(String[] args)

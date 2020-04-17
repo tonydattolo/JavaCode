@@ -1,3 +1,5 @@
+package LabsMaven.BookSourceCode.ch18.sec01;
+
 // In this program, we use type parameters. The error
 // from the UnsafeDemo program cannot occur here. The
 // compiler accurately reports the error.

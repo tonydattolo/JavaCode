@@ -1,3 +1,5 @@
+package LabsMaven.BookSourceCode.ch18.sec01;
+
 public class UnsafeDemo
 {
    public static void main(String[] args)

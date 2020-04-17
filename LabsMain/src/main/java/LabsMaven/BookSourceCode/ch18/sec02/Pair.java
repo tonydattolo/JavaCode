@@ -1,6 +1,8 @@
+package LabsMaven.BookSourceCode.ch18.sec02;
+
 /**
-   This class collects a pair of elements of different types.
-*/
+ * This class collects a pair of elements of different types.
+ */
 public class Pair<T, S>
 {
    private T first;

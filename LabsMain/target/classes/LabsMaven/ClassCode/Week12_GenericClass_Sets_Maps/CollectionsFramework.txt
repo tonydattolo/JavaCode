@@ -1,0 +1,127 @@
+Chapter 15: The Java Collections Framework
+
+Collection interface groups together elements for later retrieval
+
+            -   List    : ArrayList, Stack, Linked List
+Collection  -   Queue   : LinkedList, Priority Queue
+            -   Set     : HashSet, TreeSet
+
+            -   Map     : HashMap, TreeMap
+
+                                    METHODS OF COLLECTION INTERFACE
+Collection<String> coll = new ArrayList<>();        The ArrayList class implements the Collection interface.
+coll = new TreeSet<>();                             The TreeSet class (Section 15.3) also implements the Collection interface.
+int n = coll.size();                                Gets the size of the collection. n is now 0.
+coll.add("Harry");                                  Adds elements to the collection.
+coll.add("Sally");                                  
+String s = coll.toString();                         Returns a string with all elements in the collection. s is now [Harry, Sally].
+System.out.println(coll);                           Invokes the toString method and prints [Harry, Sally].
+coll.remove("Harry");                               Removes an element from the collection, returning false if the element is not present. b is false.
+boolean b = coll.remove("Tom");
+b = coll.contains("Sally");                         Checks whether this collection contains a given element. b is now true.
+for (String s : coll) {                             You can use the “for each” loop with any collection. This loop prints the elements on separate lines.
+System.out.println(s); } 
+Iterator<String> iter = coll.iterator();            You use an iterator for visiting the elements in the collection (see Section 15.2.3).
+
+LINKED LISTS
+Linked Lists consist of nodes, each which references its neighboring nodes. Inserting a new node in the middle allows you to only need to update
+the two neighboring references, as opposed to an array where you'd need to move the position of everything following the insertion.
+
+Adding and removing elements is good. Linked Lists dont have random access, so traversal is only optimal if you intend to access them sequentially in order.
+
+                                WORKING WITH LINKEDLISTS
+LinkedList<String> list =  new LinkedLIst<>();      An empty list.
+list.addLast("Harry");                              Adds an element to the end of the list. Same as add.
+list.addFirst("Sally");                             Adds an element to the beginning
+list.getFirst();
+list.getLast();
+String removed = list.removeFirst();
+
+                                ITERATOR
+ListIterator<String> iter = list.listIterator();    Starts by pointing before first element. Move with .next();
+    if(iterator.hasNext()) {                        **note: if at EOL, throws NoSuchElementException. .hasNext() takes care of this
+        iterator.next();
+    }
+
+while (iterator.hasNext()) {                        Traverse thropugh all elements with while loop
+    String name = iterator.next();
+    TODO
+}
+for (String name : employeeNames) {                 foreach loop to visit
+    TODO
+}
+String s = iter.next();                             Assuming iter starts at beginning, gives first item
+iter.previous();                                    
+iter.set("Juliet");                                 Updates last element returned by .next() OR .previous()
+iter.hasNext();                                     Returns false if iterator at the end of the collection
+if (iter.hasPrevious()) {                           if not at beginning, .hasPrevious() returns true.
+    s = iter.previous();
+}
+iter.add("Diana");                                  Adds an element before the iterator position (ListIterator only)
+iter.next();
+iter.remove();                                      Removes last element returned by next OR previous
+
+DOUBLY LINKED LISTS
+LinkedList class is a doubly linked list. Regular linked list only has a reference to the next node, doubly linked has previous node reference as well.
+
+SETS
+Sets: have no duplicates. Inserting a duplicate is ignored.
+
+HashSet is based off of a Hash Table data structure
+    -If you want to use HashSets on your custom classes they must implement hashCode and equals methods
+    -Objects with the same hash code are placed in the same group
+TreeSet is based off a Binary Search Tree data structure
+    -Can use TreeSets for any class that implements the Comparable interface, such as string or int
+    -TreeSets are best for when you want to visit elements in sorted order
+
+Set<String> names = new HashSet<>();
+Set<String> names = new TreeSet<>();                For sorted order.
+
+Interator<String> iter = names.iterator();          Uses iterator to step through elements
+while (iter.hasNext()) {
+    String name = iter.next();
+    TODO
+}
+for (String name : names) {
+    TODO
+}
+
+**note: Iterator has no add method, you don't need the iterator position because it doesnt matter for sets. Can add directly to the set.
+        BUT you can remove elements at an Interator position, similar to ListIterator
+
+MAPS
+
+Map<String, Integer> scores = new HashMap<>();      Use if you don't need keys in sorted order.
+Map<String, Integer> scores = new TreeMap<>();      Use if you want keys in sorted order.
+score.put("Harry",90);                              Add keys and values to the map.
+score.put("Harry",392);                             Same method to update an existing values
+int n = score.get("Harry");                         Returns value associated with key.
+sysout(scores);                                     Prints entire set of key/value pairs
+for (String key : scores.keySet()) {                Iterates through all map keys and values
+    Integer value = scores.get(key);
+}
+scores.remove("Sally");                             Removes both key and value.
+
+STACKS
+Last in first out
+Stack<Integer> s = new Stack<>();
+s.push(1);                                          adds to the top of the stack
+int top = s.pop();                                  removes top of the stack and stores the value
+head = s.peek();                                    gets the top of the stack without removing it
+
+QUEUES
+First in first out
+Queue<Integer> q = new LinkedList<>();              LinkedList class implements the Queue interface
+q.add(1); q.add(2);                                 Adds to the tail of the Queue
+int head = q.remove();                              Removes head of the Queue
+head = q.peek();                                    Gets head of queue without removing
+
+PIRORITY QUEUES
+Example: collection of work requests with urgency values. Retrieved according to urgency. Lower values have higher Priority
+
+PriorityQueue<WorkOrder> q = new PriorityQueue<>();
+q.add(new WorkOrder(3, "Shampoo carpets"));
+q.add(new WorkOrder(1, "fix sink"));
+q.remove();
+q.peek();
+
