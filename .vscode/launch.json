@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ComplexDriver",
+            "request": "launch",
+            "mainClass": "LabsMaven.Lab7.ComplexDriver",
+            "projectName": "LabsMain"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FileChooserDemo",
             "request": "launch",
             "mainClass": "LabsMaven.BookSourceCode.ch11.special_topic_2.FileChooserDemo",
